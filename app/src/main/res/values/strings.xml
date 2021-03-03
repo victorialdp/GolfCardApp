@@ -3,4 +3,8 @@
     <string name="menu">Menu</string>
     <string name="players_screen">Players Screen</string>
 
+
+    <string name="final_score">Final Score </string>
+    <string name="play_again">Play Again </string>
+
 </resources>
