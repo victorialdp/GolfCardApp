@@ -1,6 +1,7 @@
 package com.testmvldp.golfcardapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,7 +20,13 @@ public class PlayersScreen extends AppCompatActivity{
         setContentView(R.layout.players_screen);
         mlayout = (GridLayout) findViewById(R.id.myLayout);
         Button addItem = (Button) findViewById(R.id.addbutton);
+        Button start = (Button) findViewById(R.id.startGame);
 
+        start.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(PlayersScreen.this, ScoreCard.class));
+            }
+        });
         View additem = null;
         additem.setOnClickListener(new View.OnClickListener() {
             @Override

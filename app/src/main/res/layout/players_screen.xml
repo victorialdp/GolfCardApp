@@ -51,6 +51,8 @@
             android:layout_marginEnd="138dp"
             android:layout_marginBottom="482dp"
             android:text="Add Players"
+            android:textColor="#0E0000"
+            app:backgroundTint="#FAF6F6"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -77,6 +79,23 @@
                 android:text="Player Initials"
                 android:textColor="#000" />
         </GridLayout>
+
+        <Button
+            android:id="@+id/startGame"
+            android:layout_width="181dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="643dp"
+            android:layout_marginEnd="115dp"
+            android:layout_marginBottom="25dp"
+            android:text="Start Game"
+            android:textColor="#0E0101"
+            android:textSize="18sp"
+            app:backgroundTint="#F6F1F1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
