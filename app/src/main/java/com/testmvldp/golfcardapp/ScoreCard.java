@@ -2,12 +2,15 @@ package com.testmvldp.golfcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
+import java.util.ArrayList;
 
 public class ScoreCard extends AppCompatActivity {
 
@@ -21,11 +24,29 @@ public class ScoreCard extends AppCompatActivity {
     private EditText p2H3;
     private TextView p2Total;
 
+    private ArrayList<Integer> intResults;
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scorecard);
+
+        Button endGame = (Button) findViewById(R.id.endGameButton);
+
+        endGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent results = new Intent(view.getContext(), FinalScore.class);
+                Bundle scores = new Bundle();
+
+                scores.putIntegerArrayList("results", intResults);
+                results.putExtras(scores);
+
+                startActivity(results);
+            }
+        });
 
         p1H1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
         p1H2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
@@ -75,6 +96,7 @@ public class ScoreCard extends AppCompatActivity {
                     total += holeInts[i];
                 }
 
+                intResults.set(0, total);
                 p1Total.setText(Integer.toString(total));
             }
         };
@@ -117,6 +139,7 @@ public class ScoreCard extends AppCompatActivity {
                     total += holeInts[i];
                 }
 
+                intResults.set(1, total);
                 p2Total.setText(Integer.toString(total));
             }
         };
