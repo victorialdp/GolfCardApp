@@ -12,7 +12,7 @@
     <string name="scoreTotal">Score Totals</string>
 
     <string name="homepage_title">putt-putt bud</string>
-
+    <string name="progress_textView">Progress: Hole </string>
 
 
     <!--    ScoreCard Page Title    -->
