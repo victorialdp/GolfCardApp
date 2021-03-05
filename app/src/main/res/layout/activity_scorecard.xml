@@ -120,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="435dp"
                 android:columnCount="3"
-                android:rowCount="8">
+                android:rowCount="5">
 
                 <TextView
                     android:id="@+id/HoleHeader_textView"
@@ -297,7 +297,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/Hole4_textView"
+                    android:id="@+id/RunningTotal_textView"
                     android:layout_width="wrap_content"
                     android:layout_height="75sp"
                     android:layout_columnWeight="1"
@@ -305,14 +305,15 @@
                     android:background="@color/white"
                     android:fontFamily="@font/comfortaa"
                     android:gravity="center"
-                    android:text="Hole 4"
+                    android:text="Running \n Total:"
                     android:textColor="@color/black"
                     android:textStyle="bold"
 
                     />
 
-                <EditText
-                    android:id="@+id/Player1Hole4_EditText"
+                <!-- calculation will probably go in last line-->
+                <TextView
+                    android:id="@+id/Player1RT_EditText"
                     android:layout_width="wrap_content"
                     android:layout_height="75sp"
                     android:layout_columnWeight="1"
@@ -322,40 +323,12 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-
-                    />
-
-                <EditText
-                    android:id="@+id/Player2Hole4_EditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="75sp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="2sp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
+                    android:text=""
 
                     />
 
                 <TextView
-                    android:id="@+id/Hole5_textView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="75sp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="2sp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:text="Hole 5"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-
-                    />
-
-                <EditText
-                    android:id="@+id/Player1Hole5_EditText"
+                    android:id="@+id/Player2RT_EditText"
                     android:layout_width="wrap_content"
                     android:layout_height="75sp"
                     android:layout_columnWeight="1"
@@ -365,22 +338,11 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:text=""
 
                     />
 
-                <EditText
-                    android:id="@+id/Player2Hole5_EditText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="75sp"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="2sp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
 
-                    />
 
 
             </GridLayout>

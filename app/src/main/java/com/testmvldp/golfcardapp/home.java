@@ -18,7 +18,7 @@ public class home extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
 
             public void run() {
-                startActivity(new Intent( home.this,PlayersScreen.class));
+                startActivity(new Intent( home.this,ScoreCard.class));
                 finish();
             }
         }, 4000);
