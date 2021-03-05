@@ -22,8 +22,8 @@
 </activity>
       <activity android:name=".ScoreCard"></activity>
         <activity android:name=".FinalScore"></activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MenuPage"></activity>
 
         <meta-data
             android:name="preloaded_fonts"

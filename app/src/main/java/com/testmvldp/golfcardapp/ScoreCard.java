@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.ImageButton;
 import java.util.ArrayList;
 
 public class ScoreCard extends AppCompatActivity {
@@ -24,7 +25,7 @@ public class ScoreCard extends AppCompatActivity {
     private EditText p2H3;
     private TextView p2Total;
 
-    private ArrayList<Integer> intResults;
+    private ArrayList<Integer> intResults = new ArrayList<>(18);
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,8 +33,13 @@ public class ScoreCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scorecard);
 
-        Button endGame = (Button) findViewById(R.id.endGameButton);
+        for(int i = 0; i < 18; ++i)
+        {
+            intResults.add(0);
+        }
 
+
+        Button endGame = (Button) findViewById(R.id.endGameButton);
         endGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -47,6 +53,16 @@ public class ScoreCard extends AppCompatActivity {
                 startActivity(results);
             }
         });
+
+        ImageButton menu = findViewById(R.id.menubutton);
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent menu = new Intent(view.getContext(), MenuPage.class);
+                startActivity(menu);
+            }
+        });
+
 
         p1H1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
         p1H2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
