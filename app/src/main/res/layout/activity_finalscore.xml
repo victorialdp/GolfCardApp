@@ -11,7 +11,7 @@
         android:id="@+id/textView3"
         android:layout_width="358dp"
         android:layout_height="68dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/final_score"
         android:textAlignment="center"
@@ -25,17 +25,73 @@
 
     <Button
         android:id="@+id/playAgainButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="206dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="24dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/comfortaa"
         android:text="@string/play_again"
         android:textColor="#000000"
-        android:textSize="26sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/trophy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:contentDescription="@string/trophy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:srcCompat="@drawable/trophy" />
+
+    <TextView
+        android:id="@+id/successText"
+        android:layout_width="190dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/success"
+        android:textAlignment="center"
+        android:textColor="#520026"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/trophy" />
+
+    <TextView
+        android:id="@+id/winnerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="83dp"
+        android:text="@string/winner"
+        android:textColor="#40001D"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/successText" />
+
+    <TextView
+        android:id="@+id/totalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="148dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/scoreTotal"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

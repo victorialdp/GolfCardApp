@@ -6,6 +6,10 @@
     <!--    Final Score Page Strings    -->
     <string name="final_score">Final Score </string>
     <string name="play_again">Play Again </string>
+    <string name="trophy">Winner Trophy</string>
+    <string name="success">Success</string>
+    <string name="winner">is the winner !</string>
+    <string name="scoreTotal">Score Totals</string>
 
     <string name="homepage_title">putt-putt bud</string>
 
