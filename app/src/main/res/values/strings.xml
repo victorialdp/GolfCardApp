@@ -3,8 +3,12 @@
     <string name="menu">Menu</string>
     <string name="players_screen">Players Screen</string>
 
-
+    <!--    Final Score Page Strings    -->
     <string name="final_score">Final Score </string>
     <string name="play_again">Play Again </string>
 
+
+    <!--    ScoreCard Page Title    -->
+    <string name="scoreCard_tile"> putt-putt bud </string>
+    <string name="endGame">End Game</string>
 </resources>
