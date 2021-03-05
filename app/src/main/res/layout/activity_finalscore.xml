@@ -11,7 +11,7 @@
         android:id="@+id/textView3"
         android:layout_width="358dp"
         android:layout_height="68dp"
-        android:layout_marginTop="49dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/final_score"
         android:textAlignment="center"
