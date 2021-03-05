@@ -21,7 +21,9 @@
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:windowSoftInputMode="adjustNothing"
+        />
 
     <TextView
         android:id="@+id/scorecardTitle"
@@ -193,7 +195,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-
+                    android:inputType="number"
                     />
 
                 <EditText
@@ -207,6 +209,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:inputType="number"
 
                     />
 
@@ -236,6 +239,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:inputType="number"
 
                     />
 
@@ -250,6 +254,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
+                    android:inputType="number"
 
                     />
 
@@ -279,7 +284,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-
+                    android:inputType="number"
                     />
 
                 <EditText
@@ -293,7 +298,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-
+                    android:inputType="number"
                     />
 
                 <TextView
@@ -313,7 +318,7 @@
 
                 <!-- calculation will probably go in last line-->
                 <TextView
-                    android:id="@+id/Player1RT_EditText"
+                    android:id="@+id/Player1RT_TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="75sp"
                     android:layout_columnWeight="1"
@@ -323,12 +328,13 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text=""
+                    android:text="-"
+
 
                     />
 
                 <TextView
-                    android:id="@+id/Player2RT_EditText"
+                    android:id="@+id/Player2RT_TextView"
                     android:layout_width="wrap_content"
                     android:layout_height="75sp"
                     android:layout_columnWeight="1"
@@ -338,7 +344,7 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:text=""
+                    android:text="-"
 
                     />
 
