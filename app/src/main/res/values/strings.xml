@@ -8,7 +8,7 @@
     <string name="play_again">Play Again </string>
 
     <string name="homepage_title">putt-putt bud</string>
-
+    <string name="progress_textView">Progress: Hole </string>
 
 
     <!--    ScoreCard Page Title    -->
