@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GolfCardApp">
-
+        <activity android:name=".PlayersScreen"></activity>
 <!-- changed intent-filter from .mainActivity to .home for splash     -->
         <activity android:name=".home">
             <intent-filter>
