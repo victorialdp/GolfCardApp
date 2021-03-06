@@ -33,6 +33,18 @@ public class ScoreCard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scorecard);
 
+        Bundle results = this.getIntent().getExtras();
+        ArrayList<String> names = results.getStringArrayList("playerNames");
+
+        TextView player1name = (TextView) findViewById(R.id.Player1_textView);
+        TextView player2name = (TextView) findViewById(R.id.Player2_textView);
+
+        String name1 = names.get(0);
+        String name2 = names.get(1);
+
+        player1name.setText(name1);
+        player2name.setText(name2);
+
         for(int i = 0; i < 18; ++i)
         {
             intResults.add(100000);
