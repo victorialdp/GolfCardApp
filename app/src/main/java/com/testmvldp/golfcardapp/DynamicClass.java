@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class DynamicClass<finalTextView> {
-    Context ctx;
+    /*Context ctx;
     public DynamicClass(Context ctx)
     {
         this.ctx = ctx;
@@ -37,4 +37,6 @@ public class DynamicClass<finalTextView> {
         editText.setInputType(InputType.TYPE_CLASS_TEXT);
         return editText;
     }
+
+     */
 }
