@@ -43,7 +43,7 @@
         android:id="@+id/trophy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
+        android:layout_marginTop="52dp"
         android:contentDescription="@string/trophy"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:id="@+id/successText"
         android:layout_width="190dp"
         android:layout_height="54dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="52dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/success"
         android:textAlignment="center"
@@ -68,30 +68,21 @@
 
     <TextView
         android:id="@+id/winnerTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="181dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="83dp"
+        android:layout_width="321dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="106dp"
         android:text="@string/winner"
+        android:textAlignment="center"
+        android:textAllCaps="false"
         android:textColor="#40001D"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/successText" />
-
-    <TextView
-        android:id="@+id/totalText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="148dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="@string/scoreTotal"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/successText"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
