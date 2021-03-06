@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#6EDF6E"
+    tools:context=".Rules">
+
+    <TextView
+        android:id="@+id/rulesTextBox"
+        android:layout_width="332dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="51dp"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/rulesText"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="44sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/homeFromRules"
+        android:layout_width="256dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/rulesButton"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="361dp"
+        android:layout_height="609dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rulesTextBox" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="287dp"
+        android:layout_height="469dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="112dp"
+        android:background="#FFFFFF"
+        android:fontFamily="@font/comfortaa"
+        android:text="1. The competitor who plays the round or rounds in the fewest strokes is the winner. \n \n  2. If a competitors putter touches the ball, that is considered a stroke. \n \n   3. If a competitors ball goes out of bounds, the ball should be put back where it went out and add one stroke to your current total. \n \n   4. After every competitor has gone once, the competitor farthest from the hole goes next."
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rulesTextBox" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
