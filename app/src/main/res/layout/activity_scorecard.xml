@@ -11,6 +11,7 @@
         android:id="@+id/endGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="24dp"
         android:background="#FFFFFF"
         android:fontFamily="@font/comfortaa"
@@ -18,12 +19,12 @@
         android:textColor="#000000"
         android:textSize="26sp"
         android:textStyle="bold"
+        android:windowSoftInputMode="adjustNothing"
         app:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:windowSoftInputMode="adjustNothing"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/scrollView" />
 
     <TextView
         android:id="@+id/scorecardTitle"
@@ -111,7 +112,8 @@
         app:layout_constraintBottom_toTopOf="@+id/endGameButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progressBar">
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        android:isScrollContainer="false">
 
         <LinearLayout
             android:layout_width="match_parent"
