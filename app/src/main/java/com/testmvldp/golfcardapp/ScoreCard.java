@@ -35,7 +35,7 @@ public class ScoreCard extends AppCompatActivity {
 
         for(int i = 0; i < 18; ++i)
         {
-            intResults.add(0);
+            intResults.add(100000);
         }
 
 

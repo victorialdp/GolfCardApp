@@ -23,20 +23,20 @@ public class FinalScore extends AppCompatActivity {
 
        for(int i = 0; i < 8; ++i)
        {
-           int maxScore = 0;
-           int maxIndex = 0;
+           int minScore = 100000;
+           int minIndex = 0;
 
            for(int j = 0; j < 8; ++j)
            {
                int score = scores.get(j);
-               if(score > maxScore)
+               if(score < minScore)
                {
-                   maxIndex = j;
-                   maxScore = score;
+                   minIndex = j;
+                   minScore = score;
                }
            }
-           playerOrder[i] = maxIndex + 1;
-           scores.set(maxIndex, -1000);
+           playerOrder[i] = minIndex + 1;
+           scores.set(minIndex, 1000);
        }
 
        TextView winner = (TextView) findViewById(R.id.winnerTextView);
