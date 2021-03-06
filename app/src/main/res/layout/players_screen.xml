@@ -110,7 +110,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:layout_width="206dp"
             android:layout_height="48dp"
             android:layout_marginStart="170dp"
@@ -124,7 +124,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <EditText
             android:id="@+id/editText"
             android:layout_width="206dp"
             android:layout_height="48dp"
