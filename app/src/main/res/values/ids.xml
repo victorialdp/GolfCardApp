@@ -2,4 +2,5 @@
 <resources>
     <item name="myLayout" type="id" />
     <item name="addbutton" type="id" />
+    <item name="playAgainButton" type="id" />
 </resources>
