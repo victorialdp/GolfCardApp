@@ -110,6 +110,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="92dp"
+            android:layout_height="33dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginTop="507dp"
+            android:layout_marginEnd="262dp"
+            android:layout_marginBottom="191dp"
+            android:background="#FFFFFF"
+            android:text="  # Holes:"
+            android:textColor="#070000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/player1Name"
             android:layout_width="206dp"
@@ -134,6 +151,21 @@
             android:layout_marginEnd="35dp"
             android:layout_marginBottom="282dp"
             android:hint="Input player two"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/holeNumber"
+            android:layout_width="206dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="170dp"
+            android:layout_marginTop="499dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginBottom="184dp"
+            android:hint="Input number of holes"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
