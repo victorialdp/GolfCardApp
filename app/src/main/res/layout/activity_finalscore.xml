@@ -76,7 +76,7 @@
         android:layout_marginBottom="106dp"
         android:text="@string/winner"
         android:textAlignment="center"
-        android:textAllCaps="false"
+        android:textAllCaps="true"
         android:textColor="#40001D"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/homeFromRules"
@@ -84,5 +84,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/successText"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/winnerscore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="130dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="50dp"
+        android:text="@string/scoreTotal"
+        android:textAlignment="center"
+        android:textColor="#40001D"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeFromRules"
+        app:layout_constraintEnd_toStartOf="@+id/totalamt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
+
+    <TextView
+        android:id="@+id/totalamt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="50dp"
+        android:text="blank"
+        android:textAlignment="center"
+        android:textColor="#40001D"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/homeFromRules"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/winnerscore"
+        app:layout_constraintTop_toBottomOf="@+id/winnerTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
