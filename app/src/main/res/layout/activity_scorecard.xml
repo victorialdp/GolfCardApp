@@ -101,23 +101,24 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
         app:layout_constraintVertical_bias="0.333" />
 
+
     <GridLayout
         android:id="@+id/gridLayout3"
         android:layout_width="352dp"
         android:layout_height="67dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="106dp"
-        android:layout_marginEnd="30dp"
+        android:layout_marginTop="76dp"
+        android:layout_marginBottom="2dp"
         android:columnCount="3"
         android:rowCount="3"
-        app:layout_constraintBottom_toTopOf="@+id/gridLayout2"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/progress_textView">
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        tools:ignore="MissingConstraints">
 
         <TextView
             android:id="@+id/HoleHeader_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
@@ -131,7 +132,7 @@
 
         <TextView
             android:id="@+id/Player1_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
@@ -144,7 +145,7 @@
 
         <TextView
             android:id="@+id/Player2_textView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
@@ -159,162 +160,212 @@
 
     </GridLayout>
 
-    <GridLayout
-        android:id="@+id/gridLayout2"
-        android:layout_width="352dp"
-        android:layout_height="236dp"
-        android:layout_marginStart="29dp"
-        android:layout_marginEnd="30dp"
-        android:columnCount="3"
-        android:rowCount="3"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="347dp"
+        android:layout_height="241dp"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout3">
 
-        <TextView
-            android:id="@+id/Hole1_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:text="Hole 1"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+        <GridLayout
+            android:id="@+id/gridLayout2"
+            android:layout_width="352dp"
+            android:layout_height="236dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="30dp"
+            android:columnCount="3"
+            android:rowCount="3">
 
-            />
+            <TextView
+                android:id="@+id/Hole1_textView"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_columnWeight="1"
 
-        <EditText
-            android:id="@+id/Player1Hole1_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Hole 1"
+                android:textColor="@color/black"
+                android:textStyle="bold"
 
-        <EditText
-            android:id="@+id/Player2Hole1_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+                />
 
-            />
+            <EditText
+                android:id="@+id/Player1Hole1_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/Hole2_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:text="Hole 2"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            <EditText
+                android:id="@+id/Player2Hole1_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold"
 
-            />
+                />
 
-        <EditText
-            android:id="@+id/Player1Hole2_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+            <TextView
+                android:id="@+id/Hole2_textView"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_columnWeight="1"
 
-            />
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Hole 2"
+                android:textColor="@color/black"
+                android:textStyle="bold"
 
-        <EditText
-            android:id="@+id/Player2Hole2_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+                />
 
-            />
+            <EditText
+                android:id="@+id/Player1Hole2_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold"
 
-        <TextView
-            android:id="@+id/Hole3_textView"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:text="Hole 3"
-            android:textColor="@color/black"
-            android:textStyle="bold"
+                />
 
-            />
+            <EditText
+                android:id="@+id/Player2Hole2_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold"
 
-        <EditText
-            android:id="@+id/Player1Hole3_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+                />
 
-        <EditText
-            android:id="@+id/Player2Hole3_EditText"
-            android:layout_width="wrap_content"
-            android:layout_height="75sp"
-            android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:background="@color/white"
-            android:fontFamily="@font/comfortaa"
-            android:gravity="center"
-            android:inputType="number"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-    </GridLayout>
+            <TextView
+                android:id="@+id/Hole3_textView"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_columnWeight="1"
+
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Hole 3"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                />
+
+            <EditText
+                android:id="@+id/Player1Hole3_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/Player2Hole3_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/Hole4_textView"
+                android:layout_width="0dp"
+                android:layout_height="75dp"
+                android:layout_columnWeight="1"
+
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:text="Hole 4"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                />
+
+            <EditText
+                android:id="@+id/Player1Hole4_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/Player2Hole4_EditText"
+                android:layout_width="0dp"
+                android:layout_height="75sp"
+                android:layout_columnWeight="1"
+                android:layout_margin="2sp"
+                android:background="@color/white"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </GridLayout>
+    </ScrollView>
 
     <GridLayout
         android:id="@+id/gridLayout4"
-        android:layout_width="351dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="42dp"
+        android:layout_width="352dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="70dp"
         android:columnCount="3"
-        android:rowCount="1"
+        android:rowCount="3"
         app:layout_constraintBottom_toTopOf="@+id/endGameButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        tools:ignore="MissingConstraints">
+
 
         <!-- calculation will probably go in last line-->
 
@@ -333,7 +384,7 @@
 
         <TextView
             android:id="@+id/Player1RT_TextView"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
@@ -362,4 +413,5 @@
 
             />
     </GridLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
