@@ -17,7 +17,6 @@ public class PlayersScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         /*
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.players_screen);
         mlayout = (GridLayout) findViewById(R.id.myLayout);
         Button addItem = (Button) findViewById(R.id.addbutton);
         View additem = null;
@@ -32,6 +31,8 @@ public class PlayersScreen extends AppCompatActivity {
         });
     }
      */
+        setContentView(R.layout.players_screen);
+
         super.onCreate(savedInstanceState);
         Button start = (Button) findViewById(R.id.editPlayers);
         start.setOnClickListener(new View.OnClickListener() {

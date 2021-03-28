@@ -27,6 +27,8 @@ public class EditPlayers extends AppCompatActivity {
         });
     }
      */
+        setContentView(R.layout.activity_edit_players);
+
         super.onCreate(savedInstanceState);
         Button start = (Button) findViewById(R.id.startGame2);
         start.setOnClickListener(new View.OnClickListener() {
