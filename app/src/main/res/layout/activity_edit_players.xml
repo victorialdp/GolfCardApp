@@ -54,68 +54,75 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="92dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="320dp"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="378dp"
-        android:background="@drawable/roundedbutton"
-        android:text="  Player 1:"
-        android:textColor="#070000"
-        android:textSize="20sp"
+    <ScrollView
+        android:layout_width="411dp"
+        android:layout_height="251dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.545">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="92dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="57dp"
-        android:layout_marginTop="408dp"
-        android:layout_marginEnd="262dp"
-        android:layout_marginBottom="290dp"
-        android:background="@drawable/roundedbutton"
-        android:text="  Player 2:"
-        android:textColor="#070000"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:weightSum="50">
 
-    <EditText
-        android:id="@+id/player1Name"
-        android:layout_width="206dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="312dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="371dp"
-        android:hint="Input player one"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:id="@+id/leftside"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="15"
+                android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/player2Name"
-        android:layout_width="206dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="170dp"
-        android:layout_marginTop="401dp"
-        android:layout_marginEnd="35dp"
-        android:layout_marginBottom="282dp"
-        android:hint="Input player two"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/p1text"
+                    android:layout_width="92dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:text="  Player 1:"
+                    android:textColor="#070000"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="92dp"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/roundedbutton"
+                    android:text="  Player 2:"
+                    android:textColor="#070000"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rightside"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="35"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/player1Name"
+                    android:layout_width="206dp"
+                    android:layout_height="48dp"
+                    android:hint="Input player one"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:id="@+id/player2Name"
+                    android:layout_width="206dp"
+                    android:layout_height="48dp"
+                    android:hint="Input player two"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

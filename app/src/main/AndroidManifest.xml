@@ -10,8 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GolfCardApp">
-        <activity android:name=".EditPlayers"></activity>
-        <activity android:name=".PlayersScreen"></activity> <!-- changed intent-filter from .mainActivity to .home for splash -->
+        <activity
+            android:name=".EditPlayers"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
+        <activity
+            android:name=".PlayersScreen"
+            android:windowSoftInputMode="adjustNothing">
+        </activity> <!-- changed intent-filter from .mainActivity to .home for splash -->
         <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +25,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScoreCard"></activity>
+        <activity
+            android:name=".ScoreCard"
+            android:windowSoftInputMode="adjustNothing">
+        </activity>
         <activity android:name=".FinalScore" />
         <activity android:name=".MainActivity" />
         <activity android:name=".MenuPage" />
