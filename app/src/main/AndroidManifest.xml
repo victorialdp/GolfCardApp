@@ -10,32 +10,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GolfCardApp">
-
-        <activity android:name=".PlayersScreen">
-        </activity>
-<!-- changed intent-filter from .mainActivity to .home for splash     -->
+        <activity android:name=".EditPlayers"></activity>
+        <activity android:name=".PlayersScreen"></activity> <!-- changed intent-filter from .mainActivity to .home for splash -->
         <activity android:name=".home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-</activity>
-
-
-
-    <activity android:name=".ScoreCard">
-
-    </activity>
-        <activity android:name=".FinalScore"></activity>
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".MenuPage"></activity>
-
+        </activity>
+        <activity android:name=".ScoreCard"></activity>
+        <activity android:name=".FinalScore" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".MenuPage" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>
