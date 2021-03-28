@@ -33,10 +33,10 @@ public class PlayersScreen extends AppCompatActivity {
     }
      */
         super.onCreate(savedInstanceState);
-        Button start = (Button) findViewById(R.id.startGame);
+        Button start = (Button) findViewById(R.id.editPlayers);
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                startActivity(new Intent(PlayersScreen.this, ScoreCard.class));
+                startActivity(new Intent(PlayersScreen.this, EditPlayers.class));
             }
         });
 

@@ -43,27 +43,29 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/startGame"
-            android:layout_width="181dp"
-            android:layout_height="63dp"
+            android:id="@+id/editPlayers"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
             android:layout_marginStart="115dp"
             android:layout_marginTop="643dp"
             android:layout_marginEnd="115dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/roundedbutton"
-            android:text="Start Game"
+            android:text="Edit Players"
             android:textColor="#0E0101"
             android:textSize="20sp"
             app:backgroundTint="#F6F1F1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="92dp"
-            android:layout_height="33dp"
+            android:layout_width="99dp"
+            android:layout_height="35dp"
             android:layout_marginStart="57dp"
             android:layout_marginTop="320dp"
             android:layout_marginEnd="262dp"
