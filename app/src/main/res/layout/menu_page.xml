@@ -10,7 +10,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="208dp"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="34dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
@@ -29,9 +29,9 @@
     <Button
         android:id="@+id/homeFromRules2"
         android:layout_width="256dp"
-        android:layout_height="55dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/button_border"
+        android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:text="return to game"
         android:textAllCaps="false"
@@ -57,8 +57,8 @@
 
     <TextView
         android:id="@+id/scorecardTitle2"
-        android:layout_width="238dp"
-        android:layout_height="112dp"
+        android:layout_width="233dp"
+        android:layout_height="0dp"
         android:layout_marginTop="28dp"
         android:layout_marginBottom="164dp"
         android:fontFamily="@font/comfortaa"
@@ -79,7 +79,6 @@
         android:layout_height="452dp"
         android:layout_marginTop="176dp"
         android:background="@drawable/roundedbutton"
-        app:backgroundTint="#FDFDFD"
         android:fontFamily="@font/comfortaa"
         android:text="@string/menuText"
         android:textAlignment="center"
@@ -88,14 +87,14 @@
         android:textSize="44sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.605"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="208dp"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="125dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
@@ -114,7 +113,7 @@
     <Button
         android:id="@+id/button6"
         android:layout_width="208dp"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="29dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
@@ -133,7 +132,7 @@
     <Button
         android:id="@+id/button7"
         android:layout_width="208dp"
-        android:layout_height="55dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="30dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"

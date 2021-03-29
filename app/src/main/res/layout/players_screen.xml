@@ -31,7 +31,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.356" />
 
         <TextView
             android:id="@+id/scorecardTitle"
@@ -97,8 +97,10 @@
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
             app:layout_constraintEnd_toEndOf="@+id/menuBackground"
+            app:layout_constraintHorizontal_bias="0.27"
             app:layout_constraintStart_toStartOf="@+id/menuBackground"
-            app:layout_constraintTop_toTopOf="@+id/menuBackground" />
+            app:layout_constraintTop_toTopOf="@+id/menuBackground"
+            app:layout_constraintVertical_bias="0.583" />
 
         <TextView
             android:id="@+id/textView"
@@ -123,41 +125,35 @@
             android:id="@+id/holeNumber"
             android:layout_width="206dp"
             android:layout_height="48dp"
-            android:layout_marginStart="162dp"
-            android:layout_marginTop="404dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="279dp"
+            android:layout_marginStart="138dp"
+            android:layout_marginTop="253dp"
+            android:layout_marginEnd="19dp"
+            android:layout_marginBottom="180dp"
             android:background="@drawable/edittext_border"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:hint="input number of holes"
             android:textColorHint="#818181"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.562" />
+            app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
+            app:layout_constraintEnd_toEndOf="@+id/menuBackground"
+            app:layout_constraintStart_toStartOf="@+id/menuBackground"
+            app:layout_constraintTop_toTopOf="@+id/menuBackground" />
 
         <EditText
             android:id="@+id/playerNumbers"
             android:layout_width="206dp"
             android:layout_height="48dp"
-            android:layout_marginStart="162dp"
-            android:layout_marginTop="313dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginBottom="370dp"
+            android:layout_marginStart="136dp"
+            android:layout_marginBottom="260dp"
             android:background="@drawable/edittext_border"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:hint="input number of players"
             android:textColorHint="#818181"
             android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.58" />
+            app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
+            app:layout_constraintStart_toStartOf="@+id/menuBackground" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

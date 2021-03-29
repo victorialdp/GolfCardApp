@@ -46,26 +46,25 @@
 
     <View
         android:id="@+id/view"
+        android:layout_width="373dp"
         android:layout_height="611dp"
+        android:layout_gravity="center"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
-        android:layout_width="373dp"
-        android:layout_gravity="center"
-        android:background = "@drawable/roundedcolored"
+        android:background="@drawable/roundedcolored"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rulesTextBox" />
 
     <TextView
         android:id="@+id/textView3"
+        android:layout_width="285dp"
+        android:layout_height="470dp"
         android:layout_marginStart="60dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="120dp"
-        android:layout_marginTop="2dp"
-        android:layout_height="470dp"
-        android:layout_width="285dp"
-        android:background = "@drawable/roundedbutton"
+        android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:text="   1. The competitor who plays the round or rounds in the fewest strokes is the winner. \n \n  2. If a competitors putter touches the ball, that is considered a stroke. \n \n   3. If a competitors ball goes out of bounds, the ball should be put back where it went out and add one stroke to your current total. \n \n   4. After every competitor has gone once, the competitor farthest from the hole goes next."
         android:textSize="20sp"
