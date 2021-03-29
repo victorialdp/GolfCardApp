@@ -23,7 +23,8 @@ public class PlayersScreen extends AppCompatActivity {
     private int holes = 0;
     private int players = 0;
 
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
 
        // super.onCreate(savedInstanceState);
        /* mlayout = (GridLayout) findViewById(R.id.myLayout);
@@ -59,8 +60,10 @@ public class PlayersScreen extends AppCompatActivity {
         EditText numHoles = (EditText) findViewById(R.id.holeNumber);
         EditText numPlayers = (EditText) findViewById(R.id.playerNumbers);
 
-        numHoles.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
-        numPlayers.setInputType(InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+        numHoles.setRawInputType(InputType.TYPE_CLASS_NUMBER | InputType.TYPE_NUMBER_VARIATION_PASSWORD);
+        numPlayers.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+
+
 
         TextWatcher holesText = new TextWatcher() {
             @Override
@@ -74,14 +77,39 @@ public class PlayersScreen extends AppCompatActivity {
             }
 
             @Override
-            public void afterTextChanged(Editable editable) {
+            public void afterTextChanged(Editable editable)
+            {
+                String value = numHoles.getText().toString();
+                value = value.replaceAll("\\s+", "");
 
-                holes = Integer.valueOf(numHoles.getText().toString());
+                for(int i = 0; i < value.length(); ++i)
+                {
+                    if(!Character.isDigit(value.charAt(0)))
+                    {
+                        if(i == 0)
+                        {
+                            numHoles.setText("");
+                        }
+                        else
+                        {
+                            numHoles.setText(value.substring(0, i));
+                        }
+                    }
+                }
 
+                if(value.equals(""))
+                {
+
+                }
+                else
+                {
+                    holes = Integer.valueOf(numHoles.getText().toString());
+                }
             }
         };
 
-        TextWatcher playersText = new TextWatcher() {
+        TextWatcher playersText = new TextWatcher()
+        {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -95,7 +123,18 @@ public class PlayersScreen extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable editable)
             {
-                players = Integer.valueOf(numPlayers.getText().toString());
+
+                String value = numPlayers.getText().toString();
+                value = value.replaceAll("\\s+", "");
+
+                if(value.equals(""))
+                {
+
+                }
+                else
+                {
+                    players = Integer.valueOf(value);
+                }
             }
         };
 
