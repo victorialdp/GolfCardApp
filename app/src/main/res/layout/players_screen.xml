@@ -14,6 +14,23 @@
         tools:context=".ScoreCard">
 
         <TextView
+            android:id="@+id/menuBackground"
+            android:layout_width="341dp"
+            android:layout_height="411dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/roundedbutton"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/game_title"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/scorecardTitle"
             android:layout_width="233dp"
             android:layout_height="125dp"
@@ -71,7 +88,7 @@
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="378dp"
             android:background="@drawable/roundedbutton"
-            android:text="# Players:"
+            android:text="# players:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -88,7 +105,7 @@
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="287dp"
             android:background="@drawable/roundedbutton"
-            android:text="  # Holes:"
+            android:text="  # holes:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
