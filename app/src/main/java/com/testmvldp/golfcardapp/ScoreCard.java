@@ -25,6 +25,8 @@ public class ScoreCard extends AppCompatActivity {
     private EditText p2H3;
     private TextView p2Total;
 
+    private int numHoles;
+
     private ArrayList<Integer> intResults = new ArrayList<>(18);
 
     @Override
@@ -35,6 +37,7 @@ public class ScoreCard extends AppCompatActivity {
 
         Bundle results = this.getIntent().getExtras();
         ArrayList<String> names = results.getStringArrayList("playerNames");
+        numHoles = results.getInt("holes");
 
         TextView player1name = (TextView) findViewById(R.id.Player1_textView);
         TextView player2name = (TextView) findViewById(R.id.Player2_textView);

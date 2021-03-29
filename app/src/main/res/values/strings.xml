@@ -2,6 +2,7 @@
     <string name="app_name">putt-putt bud</string>
     <string name="menu">Menu</string>
     <string name="players_screen">Players Screen</string>
+    <string name="game_title"> game </string>
 
     <!--    Final Score Page Strings    -->
     <string name="final_score">Final Score </string>
@@ -9,11 +10,11 @@
     <string name="trophy">Winner Trophy</string>
     <string name="success">Success</string>
     <string name="winner">is the winner !</string>
-    <string name="scoreTotal">Score: </string>
+    <string name="scoreTotal">score: </string>
 
 
     <string name="homepage_title">putt-putt bud</string>
-    <string name="progress_textView">Progress: Hole </string>
+    <string name="progress_textView">progress: hole </string>
 
 
     <!--    ScoreCard Page Title    -->
@@ -21,15 +22,16 @@
     <string name="endGame">End Game</string>
 
     <!--    Rules Page Strings    -->
-    <string name="rulesText"> Rules </string>
+    <string name="rulesText"> rules </string>
     <string name="rulesButton"> Return to Game </string>
 
     <!--    Menu Page Strings    -->
-    <string name="menuText"> Menu </string>
-    <string name="menu1"> Edit Players </string>
-    <string name="menu2"> Clear Scores </string>
-    <string name="menu3"> Restart </string>
-    <string name="menu4"> Rules </string>
+    <string name="menuText"> menu </string>
+    <string name="menu1"> edit players </string>
+    <string name="menu2"> clear scores </string>
+    <string name="menu3"> restart </string>
+    <string name="menu4"> rules </string>
     <string name="logo"> logo </string>
+
 
 </resources>

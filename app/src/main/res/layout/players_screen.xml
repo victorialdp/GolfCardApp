@@ -14,6 +14,23 @@
         tools:context=".ScoreCard">
 
         <TextView
+            android:id="@+id/menuBackground"
+            android:layout_width="341dp"
+            android:layout_height="411dp"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/roundedbutton"
+            android:fontFamily="@font/comfortaa"
+            android:text="@string/game_title"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="44sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/scorecardTitle"
             android:layout_width="233dp"
             android:layout_height="125dp"
@@ -43,50 +60,35 @@
             app:srcCompat="@drawable/logo" />
 
         <Button
-            android:id="@+id/startGame"
-            android:layout_width="181dp"
-            android:layout_height="63dp"
+            android:id="@+id/editPlayers"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
             android:layout_marginStart="115dp"
             android:layout_marginTop="643dp"
             android:layout_marginEnd="115dp"
             android:layout_marginBottom="25dp"
-            android:text="Start Game"
+            android:background="@drawable/roundedbutton"
+            android:text="Edit Players"
             android:textColor="#0E0101"
             android:textSize="20sp"
             app:backgroundTint="#F6F1F1"
-            android:background = "@drawable/roundedbutton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="143dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="134dp"
-            android:layout_marginTop="196dp"
-            android:layout_marginEnd="134dp"
-            android:layout_marginBottom="490dp"
-            android:background = "@drawable/roundedbutton"
-            android:text="  Add players"
-            android:textColor="#070000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666" />
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="92dp"
-            android:layout_height="33dp"
+            android:layout_width="99dp"
+            android:layout_height="35dp"
             android:layout_marginStart="57dp"
             android:layout_marginTop="320dp"
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="378dp"
-            android:background = "@drawable/roundedbutton"
-            android:text="  Player 1:"
+            android:background="@drawable/roundedbutton"
+            android:text="# players:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -95,15 +97,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView7"
-            android:layout_width="92dp"
+            android:id="@+id/textView"
+            android:layout_width="99dp"
             android:layout_height="33dp"
             android:layout_marginStart="57dp"
-            android:layout_marginTop="408dp"
+            android:layout_marginTop="411dp"
             android:layout_marginEnd="262dp"
-            android:layout_marginBottom="290dp"
-            android:background = "@drawable/roundedbutton"
-            android:text="  Player 2:"
+            android:layout_marginBottom="287dp"
+            android:background="@drawable/roundedbutton"
+            android:text="  # holes:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -112,14 +114,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/player1Name"
+            android:id="@+id/holeNumber"
             android:layout_width="206dp"
             android:layout_height="48dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="312dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="371dp"
-            android:hint="Input player one"
+            android:layout_marginStart="162dp"
+            android:layout_marginTop="404dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="279dp"
+            android:hint="Input number of holes"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -127,14 +129,14 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/player2Name"
+            android:id="@+id/playerNumbers"
             android:layout_width="206dp"
             android:layout_height="48dp"
-            android:layout_marginStart="170dp"
-            android:layout_marginTop="401dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginBottom="282dp"
-            android:hint="Input player two"
+            android:layout_marginStart="162dp"
+            android:layout_marginTop="313dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginBottom="370dp"
+            android:hint="Input number of players"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
