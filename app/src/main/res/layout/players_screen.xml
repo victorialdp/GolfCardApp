@@ -71,7 +71,7 @@
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="378dp"
             android:background="@drawable/roundedbutton"
-            android:text="# Players:"
+            android:text="# players:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -80,15 +80,15 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="92dp"
+            android:id="@+id/holeNumTextView"
+            android:layout_width="99dp"
             android:layout_height="33dp"
             android:layout_marginStart="57dp"
             android:layout_marginTop="411dp"
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="287dp"
-            android:background="#FFFFFF"
-            android:text="  # Holes:"
+            android:background="@drawable/roundedbutton"
+            android:text="  # holes:"
             android:textColor="#070000"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
