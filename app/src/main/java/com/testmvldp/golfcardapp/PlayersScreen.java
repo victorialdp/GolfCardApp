@@ -134,6 +134,7 @@ public class PlayersScreen extends AppCompatActivity {
                 else
                 {
                     players = Integer.valueOf(value);
+                    System.out.println(value);
                 }
             }
         };

@@ -57,6 +57,8 @@ public class EditPlayers extends AppCompatActivity {
         numPlayers = data.getInt("players");
         inputs = new ArrayList<>(numPlayers);
 
+        initilizeArray();
+
         leftSide = (LinearLayout) findViewById(R.id.leftside) ;
         rightSide = (LinearLayout) findViewById(R.id.rightside);
 
@@ -117,12 +119,22 @@ public class EditPlayers extends AppCompatActivity {
 
                 data.putStringArrayList("playerNames", inputs);
                 data.putInt("holes", numHoles);
+                data.putInt("players", numPlayers);
                 test.putExtras(data);
                 startActivity(test);
             }
         });
 
     }
+
+    public void initilizeArray()
+    {
+        for(int i = 0; i < numPlayers; ++i)
+        {
+            inputs.add("");
+        }
+    }
+
 
     public void makeLayout(int numPlayers)
     {
@@ -150,6 +162,8 @@ public class EditPlayers extends AppCompatActivity {
         for(int i = 2; i < numPlayers; ++i)
         {
             EditText input = new EditText(getApplicationContext());
+            input.setGravity(Gravity.CENTER_VERTICAL);
+            input.setTextSize(20);
 
             String stringNumber  = "";
             switch(i)
@@ -190,6 +204,7 @@ public class EditPlayers extends AppCompatActivity {
             });
 
             rightSide.addView(input, p1name.getLayoutParams());
+
         }
     }
 }
