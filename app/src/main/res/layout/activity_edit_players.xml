@@ -82,14 +82,16 @@
                 <TextView
                     android:id="@+id/p1text"
                     android:layout_width="92dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="33dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/roundedbutton"
                     android:fontFamily="@font/comfortaa"
                     android:text="@string/p1label"
                     android:textColor="#070000"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:gravity="center"/>
 
                 <TextView
                     android:id="@+id/textView9"
@@ -97,6 +99,7 @@
                     android:layout_height="33dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
                     android:background="@drawable/roundedbutton"
                     android:text="@string/p2label"
                     android:fontFamily="@font/comfortaa"

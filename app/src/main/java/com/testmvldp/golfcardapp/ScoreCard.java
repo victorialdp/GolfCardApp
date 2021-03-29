@@ -3,6 +3,7 @@ package com.testmvldp.golfcardapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,19 +17,21 @@ import java.util.ArrayList;
 
 public class ScoreCard extends AppCompatActivity {
 
-    private EditText p1H1;
-    private EditText p1H2;
-    private EditText p1H3;
-    private TextView p1Total;
+    private ImageButton goRight;
+    private ImageButton goLeft;
 
-    private EditText p2H1;
-    private EditText p2H2;
-    private EditText p2H3;
-    private TextView p2Total;
-
+    private int currentPage = 1;
     private int numHoles;
+    private int numPlayers;
 
-    private ArrayList<Integer> intResults = new ArrayList<>(18);
+
+    private ArrayList<EditText> holes;
+    private ArrayList<Integer> intResults;
+    private ArrayList<String> names;
+
+    private TextView player1name;
+    private TextView player2name;
+
 
 
     @Override
@@ -38,17 +41,66 @@ public class ScoreCard extends AppCompatActivity {
         setContentView(R.layout.activity_scorecard);
 
         Bundle results = this.getIntent().getExtras();
-        ArrayList<String> names = results.getStringArrayList("playerNames");
+        names = results.getStringArrayList("playerNames");
         numHoles = results.getInt("holes");
+        numPlayers = results.getInt("players");
+        intResults = new ArrayList<>(16);//4 players times 4 holes
 
-        TextView player1name = (TextView) findViewById(R.id.Player1_textView);
-        TextView player2name = (TextView) findViewById(R.id.Player2_textView);
+        ArrayList<String> tempArray = new ArrayList<>();
+        for(int i = 0; i < numPlayers; ++i)
+        {
+            tempArray.add(names.get(i));
+        }
 
-        String name1 = names.get(0);
-        String name2 = names.get(1);
+        names = tempArray;
 
-        player1name.setText(name1);
-        player2name.setText(name2);
+        holes = new ArrayList<>(8);
+
+        EditText l1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
+        EditText l2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
+        EditText l3 = (EditText) findViewById(R.id.Player1Hole3_EditText);
+        EditText l4 = (EditText) findViewById(R.id.Player1Hole4_EditText);
+
+        EditText r1 = (EditText) findViewById(R.id.Player2Hole1_EditText);
+        EditText r2 = (EditText) findViewById(R.id.Player2Hole2_EditText);
+        EditText r3 = (EditText) findViewById(R.id.Player2Hole3_EditText);
+        EditText r4 = (EditText) findViewById(R.id.Player2Hole4_EditText);
+
+        holes.add(l1);
+        holes.add(l2);
+        holes.add(l3);
+        holes.add(l4);
+
+        holes.add(r1);
+        holes.add(r2);
+        holes.add(r3);
+        holes.add(r4);
+
+
+        goRight = (ImageButton) findViewById(R.id.right_players_scroll);
+        goLeft = (ImageButton) findViewById(R.id.left_players_scroll);
+
+        goRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+               changePage("Right");
+            }
+        });
+
+        goLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                changePage("Left");
+            }
+        });
+
+        player1name = (TextView) findViewById(R.id.Player1_textView);
+        player2name = (TextView) findViewById(R.id.Player2_textView);
+
+        player1name.setText(names.get(0));
+        player2name.setText(names.get(1));
 
         for(int i = 0; i < 18; ++i)
         {
@@ -80,112 +132,275 @@ public class ScoreCard extends AppCompatActivity {
             }
         });
 
-
-        p1H1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
-        p1H2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
-        p1H3 = (EditText) findViewById(R.id.Player1Hole3_EditText);
-        p1Total = (TextView) findViewById(R.id.Player1RT_TextView);
-
-        p2H1 = (EditText) findViewById(R.id.Player2Hole1_EditText);
-        p2H2 = (EditText) findViewById(R.id.Player2Hole2_EditText);
-        p2H3 = (EditText) findViewById(R.id.Player2Hole3_EditText);
-        p2Total = (TextView) findViewById(R.id.Player2RT_TextView);
-
-        TextWatcher p1 = new TextWatcher()
-        {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable)
-            {
-                String[] holeStrings = new String[3];
-                int[] holeInts = new int[3];
-
-                holeStrings[0] = p1H1.getText().toString();
-                holeStrings[1] = p1H2.getText().toString();
-                holeStrings[2] = p1H3.getText().toString();
-
-                int total = 0;
-
-                for(int i = 0; i < 3; ++i)
-                {
-                    if(holeStrings[i].equals(""))
-                    {
-                        holeInts[i] = 0;
-                    }
-                    else
-                    {
-                        holeInts[i] = Integer.valueOf(holeStrings[i]);
-                    }
-
-                    total += holeInts[i];
-                }
-
-                intResults.set(0, total);
-                p1Total.setText(Integer.toString(total));
-            }
-        };
-
-        TextWatcher p2 = new TextWatcher()
-        {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable)
-            {
-                String[] holeStrings = new String[3];
-                int[] holeInts = new int[3];
-
-                holeStrings[0] = p2H1.getText().toString();
-                holeStrings[1] = p2H2.getText().toString();
-                holeStrings[2] = p2H3.getText().toString();
-
-                int total = 0;
-
-                for(int i = 0; i < 3; ++i)
-                {
-                    if(holeStrings[i].equals(""))
-                    {
-                        holeInts[i] = 0;
-                    }
-                    else
-                    {
-                        holeInts[i] = Integer.valueOf(holeStrings[i]);
-                    }
-
-                    total += holeInts[i];
-                }
-
-                intResults.set(1, total);
-                p2Total.setText(Integer.toString(total));
-            }
-        };
-
-        p1H1.addTextChangedListener(p1);
-        p1H2.addTextChangedListener(p1);
-        p1H3.addTextChangedListener(p1);
-
-        p2H1.addTextChangedListener(p2);
-        p2H2.addTextChangedListener(p2);
-        p2H3.addTextChangedListener(p2);
-
     }
+
+//    public void setBoard()
+//    {
+//        if(currentPage == 0)
+//        {
+//                for(int i = 0; i < 4; ++i)
+//                {
+//
+//                }
+//        }
+//    }
+
+//    public TextWatcher makeTextWatcher(int player, int hole)
+//    {
+//        TextWatcher temp = new TextWatcher() {
+//            @Override
+//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//            }
+//
+//            @Override
+//            public void afterTextChanged(Editable editable)
+//            {
+//                score
+//            }
+//        };
+//
+//        return temp;
+//    }
+
+    public void changePage(String direciton)
+    {
+        String leftPlayer = player1name.getText().toString();
+        int index = -100;
+
+        for(int i = 0; i < numPlayers; ++i)
+        {
+            if(leftPlayer.equals(names.get(i)))
+            {
+                index = i;
+            }
+        }
+
+        if(direciton.equals("Right"))
+        {
+            if(index == names.size()-2)
+            {
+                player1name.setText(names.get(0));
+                player2name.setText(names.get(1));
+            }
+            else
+            {
+                player1name.setText(names.get(index+2));
+                player2name.setText(names.get(index+3));
+            }
+        }
+        else
+        {
+            if (index == 0)
+            {
+                player1name.setText(names.get(names.size()-2));
+                player2name.setText(names.get(names.size()-1));
+            }
+            else
+            {
+                player1name.setText(names.get(index-2));
+                player2name.setText(names.get(index-3));
+            }
+        }
+    }
+
+
+
+//    public void goRight()
+//    {
+//        p1H1.removeTextChangedListener(p1);
+//        p1H2.removeTextChangedListener(p1);
+//        p1H3.removeTextChangedListener(p1);
+//
+//        p2H1.removeTextChangedListener(p2);
+//        p2H2.removeTextChangedListener(p2);
+//        p2H3.removeTextChangedListener(p2);
+//    }
+//
+//    public void goLeft()
+//    {}
+//
+//
+//     TextWatcher p1 = new TextWatcher()
+//    {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable)
+//        {
+//            String[] holeStrings = new String[3];
+//            int[] holeInts = new int[3];
+//
+//            holeStrings[0] = p1H1.getText().toString();
+//            holeStrings[1] = p1H2.getText().toString();
+//            holeStrings[2] = p1H3.getText().toString();
+//            holeStrings[3] = p1H4.getText().toString();
+//
+//            int total = 0;
+//
+//            for(int i = 0; i < 4; ++i)
+//            {
+//                if(holeStrings[i].equals(""))
+//                {
+//                    holeInts[i] = 0;
+//                }
+//                else
+//                {
+//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
+//                }
+//
+//                total += holeInts[i];
+//            }
+//
+//            intResults.set(0, total);
+//            p1Total.setText(Integer.toString(total));
+//        }
+//    };
+//
+//    TextWatcher p2 = new TextWatcher()
+//    {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable)
+//        {
+//            String[] holeStrings = new String[4];
+//            int[] holeInts = new int[4];
+//
+//            holeStrings[0] = p2H1.getText().toString();
+//            holeStrings[1] = p2H2.getText().toString();
+//            holeStrings[2] = p2H3.getText().toString();
+//            holeStrings[3] = p2H4.getText().toString();
+//
+//            int total = 0;
+//
+//            for(int i = 0; i < 4; ++i)
+//            {
+//                if(holeStrings[i].equals(""))
+//                {
+//                    holeInts[i] = 0;
+//                }
+//                else
+//                {
+//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
+//                }
+//
+//                total += holeInts[i];
+//            }
+//
+//            intResults.set(1, total);
+//            p2Total.setText(Integer.toString(total));
+//        }
+//    };
+//
+//    TextWatcher p3 = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable)
+//        {
+//            String[] holeStrings = new String[4];
+//            int[] holeInts = new int[4];
+//
+//            holeStrings[0] = p3H1.getText().toString();
+//            holeStrings[1] = p3H2.getText().toString();
+//            holeStrings[2] = p3H3.getText().toString();
+//            holeStrings[3] = p3H4.getText().toString();
+//
+//            int total = 0;
+//
+//            for(int i = 0; i < 4; ++i)
+//            {
+//                if(holeStrings[i].equals(""))
+//                {
+//                    holeInts[i] = 0;
+//                }
+//                else
+//                {
+//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
+//                }
+//
+//                total += holeInts[i];
+//            }
+//
+//            intResults.set(2, total);
+//            p3Total.setText(Integer.toString(total));
+//        }
+//    };
+//
+//    TextWatcher p4 = new TextWatcher() {
+//        @Override
+//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//
+//        }
+//
+//        @Override
+//        public void afterTextChanged(Editable editable)
+//        {
+//            String[] holeStrings = new String[4];
+//            int[] holeInts = new int[4];
+//
+//            holeStrings[0] = p4H1.getText().toString();
+//            holeStrings[1] = p4H2.getText().toString();
+//            holeStrings[2] = p4H3.getText().toString();
+//            holeStrings[3] = p4H4.getText().toString();
+//
+//            int total = 0;
+//
+//            for(int i = 0; i < 4; ++i)
+//            {
+//                if(holeStrings[i].equals(""))
+//                {
+//                    holeInts[i] = 0;
+//                }
+//                else
+//                {
+//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
+//                }
+//
+//                total += holeInts[i];
+//            }
+//
+//            intResults.set(3, total);
+//            p4Total.setText(Integer.toString(total));
+//        }
+//    };
+
+
 
 
 }
