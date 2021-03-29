@@ -1,8 +1,11 @@
 package com.testmvldp.golfcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -131,14 +134,41 @@ public class EditPlayers extends AppCompatActivity {
         for(int i = 3; i <= numPlayers; ++i)
         {
            TextView label = new TextView(getApplicationContext());
-           label.setText("Player " + i);
+           label.setText("Player " + i + ":");
            label.setGravity(Gravity.CENTER);
+           label.setBackgroundColor(Color.WHITE);
+           label.setBackgroundResource(R.drawable.roundedbutton);
+           Typeface font = ResourcesCompat.getFont(this, R.font.comfortaa);
+           label.setTypeface(font);
+           label.setTextColor(p1Text.getCurrentTextColor());
+           label.setTextSize(20);
+
+
            leftSide.addView(label, p1Text.getLayoutParams());
         }
 
         for(int i = 2; i < numPlayers; ++i)
         {
             EditText input = new EditText(getApplicationContext());
+
+            String stringNumber  = "";
+            switch(i)
+            {
+                case 2:
+                    stringNumber = "Three";
+                case 3:
+                    stringNumber = "Four";
+                case 4:
+                    stringNumber = "Five";
+                case 5:
+                    stringNumber = "Six";
+                case 6:
+                    stringNumber ="Seven";
+                case 7:
+                    stringNumber ="Eight";
+            }
+
+
 
             int index = i;
             input.addTextChangedListener(new TextWatcher() {

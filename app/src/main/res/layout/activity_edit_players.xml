@@ -80,11 +80,12 @@
                 <TextView
                     android:id="@+id/p1text"
                     android:layout_width="92dp"
-                    android:layout_height="33dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/roundedbutton"
-                    android:text="  player 1:"
+                    android:fontFamily="@font/comfortaa"
+                    android:text="@string/p1label"
                     android:textColor="#070000"
                     android:textSize="20sp" />
 
@@ -95,9 +96,11 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/roundedbutton"
-                    android:text="  player 2:"
+                    android:text="@string/p2label"
+                    android:fontFamily="@font/comfortaa"
                     android:textColor="#070000"
-                    android:textSize="20sp" />
+                    android:textSize="20sp"
+                    android:gravity="center"/>
             </LinearLayout>
 
             <LinearLayout
@@ -113,14 +116,14 @@
                     android:layout_width="206dp"
                     android:layout_height="48dp"
                     android:hint="Input player one"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/player2Name"
                     android:layout_width="206dp"
                     android:layout_height="48dp"
                     android:hint="Input player two"
-                    android:textSize="18sp" />
+                    android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

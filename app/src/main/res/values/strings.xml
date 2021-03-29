@@ -16,6 +16,8 @@
     <string name="homepage_title">putt-putt bud</string>
     <string name="progress_textView">progress: hole </string>
 
+    <string name="p1label">player 1:</string>
+    <string name="p2label">player 2:</string>
 
     <!--    ScoreCard Page Title    -->
     <string name="scoreCard_tile"> putt-putt bud </string>

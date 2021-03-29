@@ -9,6 +9,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.ImageButton;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ public class ScoreCard extends AppCompatActivity {
     private int numHoles;
 
     private ArrayList<Integer> intResults = new ArrayList<>(18);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
