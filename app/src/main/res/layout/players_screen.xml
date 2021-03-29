@@ -81,13 +81,13 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="92dp"
+            android:layout_width="99dp"
             android:layout_height="33dp"
             android:layout_marginStart="57dp"
             android:layout_marginTop="411dp"
             android:layout_marginEnd="262dp"
             android:layout_marginBottom="287dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/roundedbutton"
             android:text="  # Holes:"
             android:textColor="#070000"
             android:textSize="20sp"

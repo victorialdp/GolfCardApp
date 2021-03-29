@@ -21,7 +21,7 @@
     <string name="endGame">End Game</string>
 
     <!--    Rules Page Strings    -->
-    <string name="rulesText"> Rules </string>
+    <string name="rulesText"> rules </string>
     <string name="rulesButton"> Return to Game </string>
 
     <!--    Menu Page Strings    -->
