@@ -84,7 +84,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/roundedbutton"
-                    android:text="  Player 1:"
+                    android:text="  player 1:"
                     android:textColor="#070000"
                     android:textSize="20sp" />
 
@@ -95,7 +95,7 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/roundedbutton"
-                    android:text="  Player 2:"
+                    android:text="  player 2:"
                     android:textColor="#070000"
                     android:textSize="20sp" />
             </LinearLayout>
