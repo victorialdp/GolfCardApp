@@ -60,6 +60,7 @@
         android:layout_marginTop="55dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="16dp"
+        android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toStartOf="@+id/scorecardTitle"
         app:layout_constraintHorizontal_bias="1.0"
@@ -413,5 +414,40 @@
 
             />
     </GridLayout>
+
+    <ImageButton
+        android:id="@+id/left_players_scroll"
+        android:layout_width="57dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
+        app:layout_constraintEnd_toStartOf="@+id/right_players_scroll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/round_keyboard_arrow_left_black_18dp" />
+
+    <ImageButton
+        android:id="@+id/right_players_scroll"
+        android:layout_width="57dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="29dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#FFFFFF"
+        android:rotation="180"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/left_players_scroll"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/round_keyboard_arrow_left_black_18dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
