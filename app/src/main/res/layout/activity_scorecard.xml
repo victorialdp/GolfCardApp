@@ -123,10 +123,12 @@
             android:layout_height="75sp"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
-            android:background="@color/white"
+            android:topRightRadius="12dp"
+            android:background="@drawable/grid_upperleftrounded"
+            android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="Hole"
+            android:text="hole"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -140,7 +142,7 @@
             android:background="@color/white"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="Player 1"
+            android:text="player 1"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -150,10 +152,11 @@
             android:layout_height="75sp"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
-            android:background="@color/white"
+            android:background="@drawable/grid_upperrightrounded"
+            android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="Player 2"
+            android:text="player 2"
             android:textColor="@color/black"
             android:textStyle="bold"
 
@@ -188,7 +191,7 @@
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="Hole 1"
+                android:text="hole 1"
                 android:textColor="@color/black"
                 android:textStyle="bold"
 
@@ -231,7 +234,7 @@
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="Hole 2"
+                android:text="hole 2"
                 android:textColor="@color/black"
                 android:textStyle="bold"
 
@@ -276,7 +279,7 @@
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="Hole 3"
+                android:text="hole 3"
                 android:textColor="@color/black"
                 android:textStyle="bold"
 
@@ -317,7 +320,7 @@
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="Hole 4"
+                android:text="hole 4"
                 android:textColor="@color/black"
                 android:textStyle="bold"
 
@@ -374,12 +377,13 @@
             android:id="@+id/RunningTotal_textView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:background="@drawable/grid_bottomleftrounded"
+            android:backgroundTint="#FFFFFF"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
-            android:background="@color/white"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="Total:"
+            android:text="total:"
             android:textColor="@color/black"
             android:textStyle="bold" />
 
@@ -387,6 +391,7 @@
             android:id="@+id/Player1RT_TextView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
             android:background="@color/white"
@@ -405,7 +410,8 @@
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
             android:layout_margin="2sp"
-            android:background="@color/white"
+            android:background="@drawable/grid_bottomrightrounded"
+            android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:text="-"
