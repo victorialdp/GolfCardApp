@@ -7,6 +7,7 @@ import android.media.Image;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +32,7 @@ public class ScoreCard extends AppCompatActivity {
 
     private TextView player1name;
     private TextView player2name;
+
 
 
 
@@ -168,43 +170,73 @@ public class ScoreCard extends AppCompatActivity {
 //        return temp;
 //    }
 
-    public void changePage(String direciton)
+    public void changePage(String direction)
     {
         String leftPlayer = player1name.getText().toString();
-        int index = -100;
+        int firstIndex = -100;
 
         for(int i = 0; i < numPlayers; ++i)
         {
             if(leftPlayer.equals(names.get(i)))
             {
-                index = i;
+                firstIndex = i;
             }
         }
 
-        if(direciton.equals("Right"))
+        Log.i("Info", "index " + firstIndex);
+        for(int i = 0; i < names.size(); ++i)
         {
-            if(index == names.size()-2)
+            Log.i("moreInfo", names.get(i));
+        }
+
+        Log.i("Size", String.valueOf(names.size()));
+
+        if(direction.equals("Right"))
+        {
+            if(firstIndex == names.size()-1)//Odd so second column blank
             {
+                Log.i("Odd", "At end of odd index, so loop to beginning");
                 player1name.setText(names.get(0));
                 player2name.setText(names.get(1));
             }
+            else if(firstIndex == names.size()-2)//Even so set both to first and second
+            {
+                Log.i("Even", "At end of even, so loop to beginning");
+                player1name.setText(names.get(0));
+                player2name.setText(names.get(1));
+            }
+            else if(firstIndex == names.size()-3)
+            {
+                Log.i("Even", "Going to end of odd, set only first column");
+                player1name.setText(names.get(firstIndex+2));
+                player2name.setText("");
+            }
             else
             {
-                player1name.setText(names.get(index+2));
-                player2name.setText(names.get(index+3));
+                player1name.setText(names.get(firstIndex+2));
+                player2name.setText(names.get(firstIndex+3));
             }
         }
-        else
+        else if(direction.equals("Left"))
         {
-            if (index == 0)
+            int evenOdd = names.size() % 2;//Sees if array is even or odd
+            if (firstIndex == 0)//If at beginning
             {
-                player1name.setText(names.get(names.size()-2));
-                player2name.setText(names.get(names.size()-1));
+                if(evenOdd == 0)//Even array
+                {
+                    player1name.setText(names.get(names.size()-2));
+                    player2name.setText(names.get(names.size()-1));
+                }
+                else if(evenOdd == 1)//Odd so only set first column
+                {
+                    player1name.setText(names.get(names.size()-1));
+                    player2name.setText("");
+                }
             }
-            else
+            else//regular function
             {
-                player1name.setText(names.get(index-2));
-                player2name.setText(names.get(index-3));
+                player1name.setText(names.get(firstIndex - 2));
+                player2name.setText(names.get(firstIndex-1));
             }
         }
     }

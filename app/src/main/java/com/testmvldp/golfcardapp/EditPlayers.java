@@ -9,6 +9,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -32,23 +33,6 @@ public class EditPlayers extends AppCompatActivity {
     TextView p1Text;
 
     protected void onCreate(Bundle savedInstanceState) {
-        /*
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.players_screen);
-        mlayout = (GridLayout) findViewById(R.id.myLayout);
-        Button addItem = (Button) findViewById(R.id.addbutton);
-        View additem = null;
-        additem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v)
-            {
-                dnc = new DynamicClass(context);
-                mlayout.addView(dnc.descriptionTextView(getApplicationContext(),"Player 1"),3);
-                mlayout.addView(dnc.recievedQuantityEditText(getApplicationContext()),4);
-            }
-        });
-    }
-     */
         setContentView(R.layout.activity_edit_players);
         super.onCreate(savedInstanceState);
 
@@ -112,10 +96,10 @@ public class EditPlayers extends AppCompatActivity {
                 Intent test = new Intent (v.getContext(), ScoreCard.class);
                 Bundle data = new Bundle();
 
-//                for(int i = 0; i < inputs.size(); ++i)
-//                {
-//                    System.out.println("INPUT " + i + " " + inputs.get(i));
-//                }
+                for(int i = 0; i < inputs.size(); ++i)
+                {
+                    Log.i("inputThing", inputs.get(i));
+                }
 
                 data.putStringArrayList("playerNames", inputs);
                 data.putInt("holes", numHoles);
@@ -169,20 +153,20 @@ public class EditPlayers extends AppCompatActivity {
             switch(i)
             {
                 case 2:
-                    stringNumber = "Three";
+                    stringNumber = "Input player Three";
                 case 3:
-                    stringNumber = "Four";
+                    stringNumber = "Input player Four";
                 case 4:
-                    stringNumber = "Five";
+                    stringNumber = "Input player Five";
                 case 5:
-                    stringNumber = "Six";
+                    stringNumber = "Input player Six";
                 case 6:
-                    stringNumber ="Seven";
+                    stringNumber ="Input player Seven";
                 case 7:
-                    stringNumber ="Eight";
+                    stringNumber ="Input player Eight";
             }
 
-
+            //input.setHint(stringNumber);
 
             int index = i;
             input.addTextChangedListener(new TextWatcher() {
