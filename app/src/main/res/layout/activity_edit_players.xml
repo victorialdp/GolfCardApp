@@ -34,7 +34,8 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/startGame2"
@@ -45,7 +46,7 @@
         android:layout_marginEnd="115dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/roundedbutton"
-        android:text="start game"
+        android:text="@string/start_game"
         android:textAllCaps="false"
         android:textColor="#0E0101"
         android:textSize="20sp"
@@ -106,6 +107,20 @@
                     android:textColor="#070000"
                     android:textSize="20sp"
                     android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/roundedbutton"
+                    android:fontFamily="@font/comfortaa"
+                    android:gravity="center"
+                    android:text="@string/p2label"
+                    android:textColor="#070000"
+                    android:textSize="20sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -120,14 +135,24 @@
                     android:id="@+id/player1Name"
                     android:layout_width="206dp"
                     android:layout_height="48dp"
-                    android:hint="Input player one"
+                    android:hint="@string/input_player_one"
+                    android:inputType="text"
                     android:textSize="20sp" />
 
                 <EditText
                     android:id="@+id/player2Name"
                     android:layout_width="206dp"
                     android:layout_height="48dp"
-                    android:hint="Input player two"
+                    android:hint="@string/input_player_two"
+                    android:inputType="text"
+                    android:textSize="20sp" />
+
+                <EditText
+                    android:id="@+id/player2Name2"
+                    android:layout_width="205dp"
+                    android:layout_height="48dp"
+                    android:hint="@string/input_player_three"
+                    android:inputType="text"
                     android:textSize="20sp" />
             </LinearLayout>
         </LinearLayout>
