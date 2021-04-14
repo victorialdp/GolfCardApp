@@ -7,11 +7,12 @@
     android:background="#6EDF6E"
     tools:context=".ScoreCard">
 
+
     <Button
         android:id="@+id/endGameButton"
         android:layout_width="167dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="44dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:text="end game"
@@ -24,7 +25,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
     <TextView
         android:id="@+id/scorecardTitle"
@@ -81,8 +81,10 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.28"
         app:srcCompat="@drawable/hamburgerbutton" />
 
     <TextView
@@ -123,15 +125,18 @@
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
-            android:topRightRadius="12dp"
+            android:layout_marginRight="1sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="0sp"
             android:background="@drawable/grid_upperleftrounded"
             android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:text="hole"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:topRightRadius="12dp" />
 
 
         <TextView
@@ -139,27 +144,35 @@
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="2sp"
+            android:layout_marginRight="2sp"
+            android:layout_marginBottom="3sp"
             android:background="@color/white"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="player 1"
+            android:text="player 3"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/Player2_textView"
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginLeft="1sp"
+            android:layout_marginRight="2sp"
+            android:layout_marginBottom="3sp"
             android:background="@drawable/grid_upperrightrounded"
             android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
-            android:text="player 2"
+            android:text="player 4"
             android:textColor="@color/black"
             android:textStyle="bold"
+            android:textSize="18sp"
 
             />
 
@@ -167,8 +180,8 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="347dp"
-        android:layout_height="241dp"
+        android:layout_width="352dp"
+        android:layout_height="238dp"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -188,22 +201,25 @@
                 android:layout_width="0dp"
                 android:layout_height="75dp"
                 android:layout_columnWeight="1"
-
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="1sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="hole 1"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/Player1Hole1_EditText"
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="2sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="3sp"
+                android:layout_marginBottom="2sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -216,7 +232,10 @@
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="0sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="2sp"
+                android:layout_marginBottom="2sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -231,22 +250,24 @@
                 android:layout_width="0dp"
                 android:layout_height="75dp"
                 android:layout_columnWeight="1"
-
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="1sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="hole 2"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/Player1Hole2_EditText"
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="2sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="3sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -261,7 +282,10 @@
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="0sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="2sp"
+                android:layout_marginBottom="2sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -276,22 +300,24 @@
                 android:layout_width="0dp"
                 android:layout_height="75dp"
                 android:layout_columnWeight="1"
-
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="1sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="hole 3"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/Player1Hole3_EditText"
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="2sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="3sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -304,7 +330,10 @@
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="0sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="2sp"
+                android:layout_marginBottom="2sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -317,22 +346,25 @@
                 android:layout_width="0dp"
                 android:layout_height="75dp"
                 android:layout_columnWeight="1"
-
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="1sp"
+                android:layout_marginBottom="3sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:text="hole 4"
                 android:textColor="@color/black"
-                android:textStyle="bold"
-
-                />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/Player1Hole4_EditText"
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="2sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="3sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -345,7 +377,10 @@
                 android:layout_width="0dp"
                 android:layout_height="75sp"
                 android:layout_columnWeight="1"
-                android:layout_margin="2sp"
+                android:layout_marginLeft="1sp"
+                android:layout_marginTop="2sp"
+                android:layout_marginRight="2sp"
+                android:layout_marginBottom="3sp"
                 android:background="@color/white"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
@@ -360,7 +395,6 @@
         android:id="@+id/gridLayout4"
         android:layout_width="352dp"
         android:layout_height="67dp"
-
         android:layout_marginBottom="70dp"
         android:columnCount="3"
         android:rowCount="3"
@@ -380,20 +414,26 @@
             android:background="@drawable/grid_bottomleftrounded"
             android:backgroundTint="#FFFFFF"
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
+            android:layout_marginRight="0sp"
+            android:layout_marginBottom="0sp"
+            android:layout_marginLeft="0sp"
+            android:layout_marginTop="2sp"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
             android:text="total:"
             android:textColor="@color/black"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp"/>
 
         <TextView
             android:id="@+id/Player1RT_TextView"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
+            android:layout_marginTop="0sp"
+            android:layout_marginLeft="3sp"
+            android:layout_marginRight="3sp"
+            android:layout_marginBottom="3sp"
             android:background="@color/white"
             android:fontFamily="@font/comfortaa"
             android:gravity="center"
@@ -409,7 +449,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_columnWeight="1"
-            android:layout_margin="2sp"
+            android:layout_marginLeft="0sp"
+            android:layout_marginRight="2sp"
+            android:layout_marginTop="1sp"
             android:background="@drawable/grid_bottomrightrounded"
             android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
@@ -427,7 +469,7 @@
         android:layout_height="38dp"
         android:layout_marginStart="260dp"
         android:layout_marginTop="28dp"
-        android:layout_marginEnd="6dp"
+
         android:layout_marginBottom="7dp"
         android:background="@drawable/roundedbutton"
         android:backgroundTint="#FFFFFF"

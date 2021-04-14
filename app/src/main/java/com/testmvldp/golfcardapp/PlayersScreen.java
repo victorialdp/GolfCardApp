@@ -41,8 +41,8 @@ public class PlayersScreen extends AppCompatActivity {
         });
     }
      */
-        setContentView(R.layout.players_screen);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.players_screen);
         Button start = (Button) findViewById(R.id.editPlayers);
         start.setOnClickListener(new View.OnClickListener()
         {

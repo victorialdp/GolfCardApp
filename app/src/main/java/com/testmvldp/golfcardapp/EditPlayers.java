@@ -33,8 +33,9 @@ public class EditPlayers extends AppCompatActivity {
     TextView p1Text;
 
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_edit_players);
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_edit_players);
+
 
         Bundle data = this.getIntent().getExtras();
         numHoles = data.getInt("holes");

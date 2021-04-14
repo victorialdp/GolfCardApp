@@ -97,15 +97,15 @@
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
             app:layout_constraintEnd_toEndOf="@+id/menuBackground"
-            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toStartOf="@+id/menuBackground"
             app:layout_constraintTop_toTopOf="@+id/menuBackground"
-            app:layout_constraintVertical_bias="0.583" />
+            app:layout_constraintVertical_bias="0.708" />
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="130dp"
-            android:layout_height="51dp"
+            android:layout_width="116dp"
+            android:layout_height="52dp"
             android:layout_marginStart="22dp"
             android:layout_marginTop="241dp"
             android:layout_marginEnd="259dp"
@@ -118,8 +118,10 @@
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
             app:layout_constraintEnd_toEndOf="@+id/menuBackground"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/menuBackground"
-            app:layout_constraintTop_toTopOf="@+id/menuBackground" />
+            app:layout_constraintTop_toTopOf="@+id/menuBackground"
+            app:layout_constraintVertical_bias="0.521" />
 
         <EditText
             android:id="@+id/holeNumber"
@@ -127,7 +129,6 @@
             android:layout_height="48dp"
             android:layout_marginStart="138dp"
             android:layout_marginTop="253dp"
-            android:layout_marginEnd="19dp"
             android:layout_marginBottom="180dp"
             android:background="@drawable/edittext_border"
             android:fontFamily="@font/comfortaa"
@@ -137,14 +138,16 @@
             android:textSize="15sp"
             app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
             app:layout_constraintEnd_toEndOf="@+id/menuBackground"
+            app:layout_constraintHorizontal_bias="0.315"
             app:layout_constraintStart_toStartOf="@+id/menuBackground"
-            app:layout_constraintTop_toTopOf="@+id/menuBackground" />
+            app:layout_constraintTop_toTopOf="@+id/menuBackground"
+            app:layout_constraintVertical_bias="0.0" />
 
         <EditText
             android:id="@+id/playerNumbers"
             android:layout_width="206dp"
             android:layout_height="48dp"
-            android:layout_marginStart="136dp"
+            android:layout_marginStart="144dp"
             android:layout_marginBottom="260dp"
             android:background="@drawable/edittext_border"
             android:fontFamily="@font/comfortaa"
