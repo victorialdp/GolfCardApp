@@ -1,17 +1,22 @@
 package com.testmvldp.golfcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
 
 import android.content.Intent;
-import android.media.Image;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.ImageButton;
 import java.util.ArrayList;
@@ -21,17 +26,31 @@ public class ScoreCard extends AppCompatActivity {
     private ImageButton goRight;
     private ImageButton goLeft;
 
-    private int currentPage = 1;
     private int numHoles;
     private int numPlayers;
-
 
     private ArrayList<EditText> holes;
     private ArrayList<Integer> intResults;
     private ArrayList<String> names;
+    private ArrayList<ArrayList<Integer>> playerScores;
 
     private TextView player1name;
     private TextView player2name;
+
+    private ArrayList<EditText> left;
+    private ArrayList<EditText> right;
+
+    private LinearLayout rowContainer;
+    private LinearLayout firstRow;
+    private TextView hole1;
+    private EditText leftSide;
+    private EditText rightSide;
+
+    private ScrollView scroll;
+
+    private TextView p1total;
+    private TextView p2total;
+
 
 
 
@@ -46,7 +65,18 @@ public class ScoreCard extends AppCompatActivity {
         names = results.getStringArrayList("playerNames");
         numHoles = results.getInt("holes");
         numPlayers = results.getInt("players");
-        intResults = new ArrayList<>(16);//4 players times 4 holes
+        intResults = new ArrayList<>(numPlayers);//4 players times 4 holes
+        rowContainer = findViewById(R.id.holes);
+        firstRow = findViewById(R.id.firstHole);
+        scroll = findViewById(R.id.middleRow);
+
+        playerScores = new ArrayList<>(numPlayers);
+
+        hole1 = findViewById(R.id.hole1_textView);
+        leftSide = findViewById(R.id.player1Hole1_EditText);
+        rightSide = findViewById(R.id.player2Hole1_EditText);
+        p1total = findViewById(R.id.Player1RT_TextView);
+        p2total = findViewById(R.id.Player2RT_TextView);
 
         ArrayList<String> tempArray = new ArrayList<>();
         for(int i = 0; i < numPlayers; ++i)
@@ -56,7 +86,8 @@ public class ScoreCard extends AppCompatActivity {
 
         names = tempArray;
 
-        holes = new ArrayList<>(8);
+        left = new ArrayList<>(4);
+        right = new ArrayList<>(4);
 
         EditText l1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
         EditText l2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
@@ -68,19 +99,20 @@ public class ScoreCard extends AppCompatActivity {
         EditText r3 = (EditText) findViewById(R.id.Player2Hole3_EditText);
         EditText r4 = (EditText) findViewById(R.id.Player2Hole4_EditText);
 
-        holes.add(l1);
-        holes.add(l2);
-        holes.add(l3);
-        holes.add(l4);
+        left.add(l1);
+        left.add(l2);
+        left.add(l3);
+        left.add(l4);
 
-        holes.add(r1);
-        holes.add(r2);
-        holes.add(r3);
-        holes.add(r4);
-
+        right.add(r1);
+        right.add(r2);
+        right.add(r3);
+        right.add(r4);
 
         goRight = (ImageButton) findViewById(R.id.right_players_scroll);
         goLeft = (ImageButton) findViewById(R.id.left_players_scroll);
+
+        initialize();
 
         goRight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,10 +136,12 @@ public class ScoreCard extends AppCompatActivity {
         player1name.setText(names.get(0));
         player2name.setText(names.get(1));
 
-        for(int i = 0; i < 18; ++i)
-        {
-            intResults.add(100000);
-        }
+        makePlayersArray(numPlayers);
+
+//        for(int i = 0; i < 18; ++i)
+//        {
+//            intResults.add(100000);
+//        }
 
 
         Button endGame = (Button) findViewById(R.id.endGameButton);
@@ -118,7 +152,14 @@ public class ScoreCard extends AppCompatActivity {
                 Intent results = new Intent(view.getContext(), FinalScore.class);
                 Bundle scores = new Bundle();
 
+                for(int i = 0; i < numPlayers; ++i)
+                {
+                    intResults.add(playerScores.get(i).get(left.size()));
+                }
+
+                scores.putStringArrayList("names", names);
                 scores.putIntegerArrayList("results", intResults);
+                results.putExtra("players", numPlayers);
                 results.putExtras(scores);
 
                 startActivity(results);
@@ -136,39 +177,103 @@ public class ScoreCard extends AppCompatActivity {
 
     }
 
-//    public void setBoard()
-//    {
-//        if(currentPage == 0)
-//        {
-//                for(int i = 0; i < 4; ++i)
-//                {
-//
-//                }
-//        }
-//    }
+    TextWatcher leftWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-//    public TextWatcher makeTextWatcher(int player, int hole)
-//    {
-//        TextWatcher temp = new TextWatcher() {
-//            @Override
-//            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable)
+        {
+            update();
+        }
+    };
+
+    TextWatcher rightWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable)
+        {
+            update();
+        }
+    };
+
+
+    public void initialize()
+    {
+//        for(int i = 4; i < numHoles; ++i)
+//        {
+//            LinearLayout layout = new LinearLayout(getApplicationContext());
+//            layout.setOrientation(firstRow.getOrientation());
+//            layout.setLayoutParams(firstRow.getLayoutParams());
 //
-//            }
+//            TextView label = new TextView(getApplicationContext());
+//            label.setGravity(Gravity.CENTER);
+//            label.setBackgroundColor(Color.WHITE);
+//            label.setTypeface(Typeface.DEFAULT_BOLD);
+//            label.setText("hole " + (i+1));
 //
-//            @Override
-//            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+//            EditText newLeft = new EditText(getApplicationContext());
+//            newLeft.setGravity(Gravity.CENTER);
+//            newLeft.setBackgroundColor(Color.WHITE);
+//            newLeft.setTypeface(Typeface.DEFAULT_BOLD);
+//            newLeft.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+//            left.add(newLeft);
 //
-//            }
+//            EditText newRight = new EditText(getApplicationContext());
+//            newRight.setGravity(Gravity.CENTER);
+//            newRight.setBackgroundColor(Color.WHITE);
+//            newRight.setTypeface(Typeface.DEFAULT_BOLD);
+//            newRight.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+//            right.add(newRight);
 //
-//            @Override
-//            public void afterTextChanged(Editable editable)
-//            {
-//                score
-//            }
-//        };
+//            rowContainer.addView(layout);
 //
-//        return temp;
-//    }
+//            layout.addView(label, hole1.getLayoutParams());
+//            layout.addView(newLeft, leftSide.getLayoutParams());
+//            layout.addView(newRight, rightSide.getLayoutParams());
+//        }
+
+        for(int i = 0; i < 4; ++i)
+        {
+            left.get(i).setText("0");
+            left.get(i).addTextChangedListener(leftWatcher);
+            right.get(i).setText("0");
+            right.get(i).addTextChangedListener(rightWatcher);
+        }
+
+
+    }
+
+    public void makePlayersArray(int numPlayers)
+    {
+        for(int i = 0; i < numPlayers; ++i)
+        {
+
+            ArrayList<Integer> temp = new ArrayList<>(5);
+            for(int j = 0; j < 5; ++j)
+            {
+                temp.add(0);
+            }
+            playerScores.add(temp);
+        }
+    }
+
 
     public void changePage(String direction)
     {
@@ -239,200 +344,151 @@ public class ScoreCard extends AppCompatActivity {
                 player2name.setText(names.get(firstIndex-1));
             }
         }
+
+       updateScoreboard();
     }
 
+    public void update()
+    {
+        String leftPlayer = player1name.getText().toString();
+        String rightPlayer = player2name.getText().toString();
 
+        int leftIndex = -1;
+        int rightIndex = -1;
 
-//    public void goRight()
-//    {
-//        p1H1.removeTextChangedListener(p1);
-//        p1H2.removeTextChangedListener(p1);
-//        p1H3.removeTextChangedListener(p1);
-//
-//        p2H1.removeTextChangedListener(p2);
-//        p2H2.removeTextChangedListener(p2);
-//        p2H3.removeTextChangedListener(p2);
-//    }
-//
-//    public void goLeft()
-//    {}
-//
-//
-//     TextWatcher p1 = new TextWatcher()
-//    {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable)
+        for(int i = 0; i < names.size(); ++i)
+        {
+            if(names.get(i).equals(leftPlayer))
+            {
+                leftIndex = i;
+            }
+
+            if(names.get(i).equals(rightPlayer))
+            {
+                rightIndex = i;
+            }
+        }
+
+        if(leftIndex != -1)//Cant ever not happen i think so yeah
+        {
+            int total = 0;
+            for(int i = 0; i < left.size(); ++i)
+            {
+                if(left.get(i).getText().toString().equals(""))
+                {
+                    playerScores.get(leftIndex).set(i, 0);
+                }
+                else
+                {
+                    int number = Integer.parseInt(left.get(i).getText().toString());
+                    total = total + number;
+
+                    playerScores.get(leftIndex).set(i, number);
+                }
+            }
+
+            p1total.setText(String.valueOf(total));
+            playerScores.get(leftIndex).set(left.size(), total);//Size of line is essentially numholes
+        }
+
+        if(rightIndex != -1)
+        {
+            int total = 0;
+            for(int i = 0; i < right.size(); ++i)
+            {
+                if(right.get(i).getText().toString().equals(""))
+                {
+                    playerScores.get(rightIndex).set(i, 0);
+                }
+                else
+                {
+                    int number = Integer.parseInt(right.get(i).getText().toString());
+                    total = total + number;
+
+                    playerScores.get(rightIndex).set(i, number);
+                }
+            }
+
+            p2total.setText(String.valueOf(total));
+            playerScores.get(rightIndex).set(right.size(), total);
+        }
+
+    }
+
+    public void updateScoreboard()
+    {
+        String leftPlayer = player1name.getText().toString();
+        String rightPlayer = player2name.getText().toString();
+
+        int leftIndex = -1;
+        int rightIndex = -1;
+
+        for(int i = 0; i < names.size(); ++i)
+        {
+            if(names.get(i).equals(leftPlayer))
+            {
+                leftIndex = i;
+            }
+
+            if(names.get(i).equals(rightPlayer))
+            {
+                rightIndex = i;
+            }
+        }
+
+        for(int i = 0; i < playerScores.size(); ++i)
+        {
+            Log.i("Player", "Player " + i);
+            System.out.print("Player " + i);
+            ArrayList<Integer> temp = playerScores.get(i);
+            for(int j = 0; j < temp.size(); ++j)
+            {
+                System.out.println(temp.get(j));
+                Log.i("score", "" + temp.get(j));
+            }
+        }
+
+        for(int i = 0; i < left.size(); ++i)
+        {
+            left.get(i).removeTextChangedListener(leftWatcher);
+            left.get(i).setText(String.valueOf(playerScores.get(leftIndex).get(i)));
+            left.get(i).addTextChangedListener(leftWatcher);
+        }
+
+        p1total.setText(String.valueOf(playerScores.get(leftIndex).get(playerScores.get(leftIndex).size()-1)));
+
+        if(rightIndex == -1)
+        {
+            for(int i = 0; i < right.size(); ++i)
+            {
+                right.get(i).setText("");
+            }
+            p2total.setText("");
+        }
+        else
+        {
+            for(int i = 0; i < right.size(); ++i)
+            {
+                right.get(i).removeTextChangedListener(rightWatcher);
+                right.get(i).setText(String.valueOf(playerScores.get(rightIndex).get(i)));
+                right.get(i).addTextChangedListener(rightWatcher);
+            }
+            p2total.setText(String.valueOf(playerScores.get(rightIndex).get(playerScores.get(rightIndex).size()-1)));
+        }
+
+//        for(int i = 0; i < left.size(); ++i)
 //        {
-//            String[] holeStrings = new String[3];
-//            int[] holeInts = new int[3];
-//
-//            holeStrings[0] = p1H1.getText().toString();
-//            holeStrings[1] = p1H2.getText().toString();
-//            holeStrings[2] = p1H3.getText().toString();
-//            holeStrings[3] = p1H4.getText().toString();
-//
-//            int total = 0;
-//
-//            for(int i = 0; i < 4; ++i)
-//            {
-//                if(holeStrings[i].equals(""))
-//                {
-//                    holeInts[i] = 0;
-//                }
-//                else
-//                {
-//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
-//                }
-//
-//                total += holeInts[i];
-//            }
-//
-//            intResults.set(0, total);
-//            p1Total.setText(Integer.toString(total));
+//            left.get(i).setText(playerScores.get(leftIndex).get(i));
 //        }
-//    };
+//        p1total.setText(playerScores.get(leftIndex).get(left.size()));
 //
-//    TextWatcher p2 = new TextWatcher()
-//    {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable)
+//        if(rightIndex != -1)
 //        {
-//            String[] holeStrings = new String[4];
-//            int[] holeInts = new int[4];
-//
-//            holeStrings[0] = p2H1.getText().toString();
-//            holeStrings[1] = p2H2.getText().toString();
-//            holeStrings[2] = p2H3.getText().toString();
-//            holeStrings[3] = p2H4.getText().toString();
-//
-//            int total = 0;
-//
-//            for(int i = 0; i < 4; ++i)
+//            for(int i = 0; i < right.size(); ++i)
 //            {
-//                if(holeStrings[i].equals(""))
-//                {
-//                    holeInts[i] = 0;
-//                }
-//                else
-//                {
-//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
-//                }
-//
-//                total += holeInts[i];
+//                right.get(i).setText(playerScores.get(rightIndex).get(i));
 //            }
-//
-//            intResults.set(1, total);
-//            p2Total.setText(Integer.toString(total));
+//            p2total.setText(playerScores.get(rightIndex).get(right.size()));
 //        }
-//    };
-//
-//    TextWatcher p3 = new TextWatcher() {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable)
-//        {
-//            String[] holeStrings = new String[4];
-//            int[] holeInts = new int[4];
-//
-//            holeStrings[0] = p3H1.getText().toString();
-//            holeStrings[1] = p3H2.getText().toString();
-//            holeStrings[2] = p3H3.getText().toString();
-//            holeStrings[3] = p3H4.getText().toString();
-//
-//            int total = 0;
-//
-//            for(int i = 0; i < 4; ++i)
-//            {
-//                if(holeStrings[i].equals(""))
-//                {
-//                    holeInts[i] = 0;
-//                }
-//                else
-//                {
-//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
-//                }
-//
-//                total += holeInts[i];
-//            }
-//
-//            intResults.set(2, total);
-//            p3Total.setText(Integer.toString(total));
-//        }
-//    };
-//
-//    TextWatcher p4 = new TextWatcher() {
-//        @Override
-//        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-//
-//        }
-//
-//        @Override
-//        public void afterTextChanged(Editable editable)
-//        {
-//            String[] holeStrings = new String[4];
-//            int[] holeInts = new int[4];
-//
-//            holeStrings[0] = p4H1.getText().toString();
-//            holeStrings[1] = p4H2.getText().toString();
-//            holeStrings[2] = p4H3.getText().toString();
-//            holeStrings[3] = p4H4.getText().toString();
-//
-//            int total = 0;
-//
-//            for(int i = 0; i < 4; ++i)
-//            {
-//                if(holeStrings[i].equals(""))
-//                {
-//                    holeInts[i] = 0;
-//                }
-//                else
-//                {
-//                    holeInts[i] = Integer.valueOf(holeStrings[i]);
-//                }
-//
-//                total += holeInts[i];
-//            }
-//
-//            intResults.set(3, total);
-//            p4Total.setText(Integer.toString(total));
-//        }
-//    };
-
-
-
-
+    }
 }

@@ -18,17 +18,25 @@ public class FinalScore extends AppCompatActivity {
 
         Bundle results = this.getIntent().getExtras();
         ArrayList<Integer> scores = results.getIntegerArrayList("results");
+        int numPlayers = results.getInt("players");
+        ArrayList<String> names = results.getStringArrayList("names");
 
-        int[] playerOrder = new int[8];
+        int[] playerOrder = new int[numPlayers];
+        ArrayList<Integer> copy = new ArrayList<>(numPlayers);
 
-       for(int i = 0; i < 8; ++i)
+        for(int i = 0; i < numPlayers; ++i)
+        {
+            copy.add(scores.get(i));
+        }
+
+       for(int i = 0; i < numPlayers; ++i)
        {
            int minScore = 100000;
            int minIndex = 0;
 
-           for(int j = 0; j < 8; ++j)
+           for(int j = 0; j < numPlayers; ++j)
            {
-               int score = scores.get(j);
+               int score = copy.get(j);
                if(score < minScore)
                {
                    minIndex = j;
@@ -36,16 +44,16 @@ public class FinalScore extends AppCompatActivity {
                }
            }
            playerOrder[i] = minIndex + 1;
-           scores.set(minIndex, 1000);
+           copy.set(minIndex, 1000);
 
        }
 
        TextView winner = (TextView) findViewById(R.id.winnerTextView);
-       String winnerString = "Player " + playerOrder[0] + " is the winner!";
+       String winnerString = names.get(playerOrder[0]-1) + " is the winner!";
        winner.setText(winnerString);
 
         TextView winnerScore = (TextView) findViewById(R.id.totalamt);
-        String winscore = " " + scores.get(0) + " ";
+        String winscore = " " + scores.get(playerOrder[0]-1) + " ";
         winnerScore.setText(winscore);
 
 
