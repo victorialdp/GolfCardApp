@@ -66,15 +66,15 @@ public class ScoreCard extends AppCompatActivity {
         numHoles = results.getInt("holes");
         numPlayers = results.getInt("players");
         intResults = new ArrayList<>(numPlayers);//4 players times 4 holes
-        rowContainer = findViewById(R.id.holes);
-        firstRow = findViewById(R.id.firstHole);
-        scroll = findViewById(R.id.middleRow);
+        //rowContainer = findViewById(R.id.holes);
+        //firstRow = findViewById(R.id.firstHole);
+        //scroll = findViewById(R.id.middleRow);
 
         playerScores = new ArrayList<>(numPlayers);
 
-        hole1 = findViewById(R.id.hole1_textView);
-        leftSide = findViewById(R.id.player1Hole1_EditText);
-        rightSide = findViewById(R.id.player2Hole1_EditText);
+        //hole1 = findViewById(R.id.hole1_textView);
+        //leftSide = findViewById(R.id.player1Hole1_EditText);
+        //rightSide = findViewById(R.id.player2Hole1_EditText);
         p1total = findViewById(R.id.Player1RT_TextView);
         p2total = findViewById(R.id.Player2RT_TextView);
 
