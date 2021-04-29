@@ -76,82 +76,86 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scorecardTitle3" />
 
-    <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="329dp"
-        android:layout_height="183dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal"
-            android:weightSum="50">
+
+        <ScrollView
+            android:id="@+id/scrollView3"
+            android:layout_width="329dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toTopOf="@+id/startGame2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scorecardTitle3"
+            android:layout_weight="1"
+            >
 
             <LinearLayout
-                android:id="@+id/leftside"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="15"
-                android:orientation="vertical">
+                android:id="@+id/layoutHolder"
+                android:layout_width="329dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="50">
 
-                <TextView
-                    android:id="@+id/p1text"
-                    android:layout_width="92dp"
-                    android:layout_height="33dp"
+                <LinearLayout
+                    android:id="@+id/leftside"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/p1text"
+                        android:layout_width="92dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/roundedbutton"
+                        android:fontFamily="@font/comfortaa"
+                        android:gravity="center"
+                        android:text="@string/p1label"
+                        android:textColor="#070000"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="92dp"
+                        android:layout_height="33dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/roundedbutton"
+                        android:fontFamily="@font/comfortaa"
+                        android:gravity="center"
+                        android:text="@string/p2label"
+                        android:textColor="#070000"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/rightside"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/roundedbutton"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:text="@string/p1label"
-                    android:textColor="#070000"
-                    android:textSize="20sp" />
+                    android:layout_weight="35"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="92dp"
-                    android:layout_height="33dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/roundedbutton"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:text="@string/p2label"
-                    android:textColor="#070000"
-                    android:textSize="20sp" />
+                    <EditText
+                        android:id="@+id/player1Name"
+                        android:layout_width="206dp"
+                        android:layout_height="48dp"
+                        android:hint="Input player one"
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/player2Name"
+                        android:layout_width="206dp"
+                        android:layout_height="48dp"
+                        android:hint="Input player two"
+                        android:textSize="20sp" />
+                </LinearLayout>
             </LinearLayout>
+        </ScrollView>
 
-            <LinearLayout
-                android:id="@+id/rightside"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="35"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/player1Name"
-                    android:layout_width="206dp"
-                    android:layout_height="48dp"
-                    android:hint="Input player one"
-                    android:textSize="20sp" />
-
-                <EditText
-                    android:id="@+id/player2Name"
-                    android:layout_width="206dp"
-                    android:layout_height="48dp"
-                    android:hint="Input player two"
-                    android:textSize="20sp" />
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
