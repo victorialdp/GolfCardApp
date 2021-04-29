@@ -170,8 +170,12 @@ public class ScoreCard extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent menu = new Intent(view.getContext(), MenuPage.class);
-                startActivity(menu);
+                Intent values = new Intent(view.getContext(), MenuPage.class);
+                Bundle data = new Bundle();
+                data.putInt("holes", numHoles);
+                data.putInt("players", numPlayers);
+                values.putExtras(data);
+                startActivity(values);
             }
         });
 

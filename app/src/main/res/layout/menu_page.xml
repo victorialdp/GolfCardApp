@@ -9,9 +9,9 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="34dp"
+        android:layout_width="203dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="67dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:shadowColor="#150202"
@@ -20,10 +20,9 @@
         android:textColor="#100202"
         android:textSize="18sp"
         app:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scorecardTitle2"
+        app:layout_constraintTop_toBottomOf="@+id/rulesTextBox"
         app:strokeColor="#F5F5F5" />
 
     <Button
@@ -73,28 +72,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/rulesTextBox"
-        android:layout_width="340dp"
-        android:layout_height="452dp"
-        android:layout_marginTop="176dp"
-        android:background="@drawable/roundedbutton"
-        android:fontFamily="@font/comfortaa"
-        android:text="@string/menuText"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:textSize="44sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.605"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/button5"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
+        android:layout_width="205dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="125dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
@@ -107,14 +88,13 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6"
         app:strokeColor="#F5F5F5" />
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="29dp"
+        android:layout_width="207dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:shadowColor="#150202"
@@ -126,27 +106,25 @@
         app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button7"
         app:strokeColor="#F5F5F5" />
 
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="208dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="30dp"
+    <TextView
+        android:id="@+id/rulesTextBox"
+        android:layout_width="340dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
-        android:shadowColor="#150202"
-        android:text="@string/menu2"
+        android:text="@string/menuText"
+        android:textAlignment="center"
         android:textAllCaps="false"
-        android:textColor="#100202"
-        android:textSize="18sp"
-        app:backgroundTint="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
+        android:textColor="#000000"
+        android:textSize="44sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.602"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:strokeColor="#F5F5F5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
