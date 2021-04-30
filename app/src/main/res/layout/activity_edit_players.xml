@@ -38,32 +38,34 @@
 
     <Button
         android:id="@+id/startGame2"
-        android:layout_width="181dp"
-        android:layout_height="63dp"
+        android:layout_width="176dp"
+        android:layout_height="54dp"
         android:layout_marginStart="115dp"
         android:layout_marginTop="643dp"
         android:layout_marginEnd="115dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/roundedbutton"
+        android:fontFamily="@font/comfortaa"
         android:text="start game"
         android:textAllCaps="false"
         android:textColor="#0E0101"
         android:textSize="20sp"
-        android:fontFamily="@font/comfortaa"
-        app:backgroundTint="#F6F1F1"
+        android:textStyle="bold"
+        app:backgroundTint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.857" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="369dp"
-        android:layout_height="439dp"
+        android:layout_width="367dp"
+        android:layout_height="416dp"
         android:layout_marginStart="23dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="19dp"
-        android:layout_marginBottom="24dp"
         android:background="@drawable/white_box"
         android:fontFamily="@font/comfortaa"
         android:text="edit players"
@@ -71,7 +73,6 @@
         android:textColor="#000000"
         android:textSize="35sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/startGame2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scorecardTitle3" />
@@ -87,7 +88,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/scorecardTitle3"
             android:layout_weight="1"
-            android:scrollbarFadeDuration="0">
+            >
 
             <LinearLayout
                 android:id="@+id/layoutHolder"

@@ -76,6 +76,7 @@
             android:textAllCaps="false"
             android:textColor="#0E0101"
             android:textSize="20sp"
+            android:textStyle="bold"
             app:backgroundTint="#6EDF6E"
             app:layout_constraintBottom_toBottomOf="@+id/menuBackground"
             app:layout_constraintEnd_toEndOf="@+id/menuBackground"

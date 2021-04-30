@@ -179,6 +179,12 @@ public class ScoreCard extends AppCompatActivity {
             }
         });
 
+        if(numPlayers == 2){
+
+            goLeft.setVisibility(View.GONE);
+            goRight.setVisibility(View.GONE);
+        }
+
     }
 
     TextWatcher leftWatcher = new TextWatcher() {
