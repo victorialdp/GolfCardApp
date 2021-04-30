@@ -293,6 +293,16 @@ public class ScoreCard extends AppCompatActivity {
 
     public void changePage(String direction)
     {
+        for(int i = 0; i < right.size(); ++i)
+        {
+            right.get(i).setFocusable(true);
+            right.get(i).setFocusableInTouchMode(true);
+            right.get(i).setClickable(true);
+            right.get(i).setLongClickable(true);
+            right.get(i).setCursorVisible(true);
+        }
+
+
         String leftPlayer = player1name.getText().toString();
         int firstIndex = -100;
 
@@ -331,6 +341,15 @@ public class ScoreCard extends AppCompatActivity {
                 Log.i("Even", "Going to end of odd, set only first column");
                 player1name.setText(names.get(firstIndex+2));
                 player2name.setText("");
+
+                for(int i = 0; i < right.size(); ++i)
+                {
+                    right.get(i).setFocusable(false);
+                    right.get(i).setFocusableInTouchMode(false);
+                    right.get(i).setClickable(false);
+                    right.get(i).setLongClickable(false);
+                    right.get(i).setCursorVisible(false);
+                }
             }
             else
             {
@@ -352,6 +371,15 @@ public class ScoreCard extends AppCompatActivity {
                 {
                     player1name.setText(names.get(names.size()-1));
                     player2name.setText("");
+
+                    for(int i = 0; i < right.size(); ++i)
+                    {
+                        right.get(i).setFocusable(false);
+                        right.get(i).setFocusableInTouchMode(false);
+                        right.get(i).setClickable(false);
+                        right.get(i).setLongClickable(false);
+                        right.get(i).setCursorVisible(false);
+                    }
                 }
             }
             else//regular function
