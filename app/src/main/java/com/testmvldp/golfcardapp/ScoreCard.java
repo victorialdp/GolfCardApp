@@ -20,6 +20,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
 import java.util.ArrayList;
 
 public class ScoreCard extends AppCompatActivity {
@@ -76,7 +78,7 @@ public class ScoreCard extends AppCompatActivity {
         p1total = findViewById(R.id.Player1RT_TextView);
         p2total = findViewById(R.id.Player2RT_TextView);
 
-        ArrayList<String> tempArray = new ArrayList<>();
+        ArrayList<String> tempArray = new ArrayList<>(numPlayers);
         for(int i = 0; i < numPlayers; ++i)
         {
             tempArray.add(names.get(i));
@@ -149,11 +151,36 @@ public class ScoreCard extends AppCompatActivity {
                 Intent results = new Intent(view.getContext(), FinalScore.class);
                 Bundle scores = new Bundle();
 
-                for(int i = 0; i < numPlayers; ++i)
+                if(intResults.size() < numPlayers)
                 {
-                    intResults.add(playerScores.get(i).get(left.size()));
+                    for(int i = 0; i < numPlayers; ++i)
+                    {
+                        intResults.add( playerScores.get(i).get(left.size()));
+                    }
+                }
+                else
+                {
+                    for(int i = 0; i < numPlayers; ++i)
+                    {
+                        intResults.set(i, playerScores.get(i).get(left.size()));
+                    }
                 }
 
+                int total = 0;
+                for(int i = 0; i < intResults.size(); ++i)
+                {
+                    total += intResults.get(i);
+                }
+
+                if(total == 0)
+                {
+                    Toast toast = Toast.makeText(getApplicationContext(), "No Scores Entered!", Toast.LENGTH_SHORT);
+                    toast.show();
+                    return;
+                }
+
+                Log.i("player names size", "" + names.size());
+                Log.i("int results size", "" + intResults.size());
                 scores.putStringArrayList("names", names);
                 scores.putIntegerArrayList("results", intResults);
                 results.putExtra("players", numPlayers);
@@ -169,6 +196,7 @@ public class ScoreCard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent values = new Intent(view.getContext(), MenuPage.class);
                 Bundle data = new Bundle();
+                data.putStringArrayList("names", names);
                 data.putInt("holes", numHoles);
                 data.putInt("players", numPlayers);
                 values.putExtras(data);
@@ -198,6 +226,14 @@ public class ScoreCard extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable editable)
         {
+            for(int i = 0; i < left.size(); ++i)
+            {
+                if(left.get(i).getText().toString().equals(""))
+                {
+                    left.get(i).setText("0");
+                }
+            }
+
             update();
         }
     };
@@ -216,6 +252,14 @@ public class ScoreCard extends AppCompatActivity {
         @Override
         public void afterTextChanged(Editable editable)
         {
+            for(int i = 0; i < right.size(); ++i)
+            {
+                if(right.get(i).getText().toString().equals(""))
+                {
+                    right.get(i).setText("0");
+                }
+            }
+
             update();
         }
     };
@@ -370,6 +414,7 @@ public class ScoreCard extends AppCompatActivity {
                 else if(evenOdd == 1)//Odd so only set first column
                 {
                     player1name.setText(names.get(names.size()-1));
+                    player2name.removeTextChangedListener(rightWatcher);
                     player2name.setText("");
 
                     for(int i = 0; i < right.size(); ++i)
@@ -505,7 +550,9 @@ public class ScoreCard extends AppCompatActivity {
         {
             for(int i = 0; i < right.size(); ++i)
             {
+                right.get(i).removeTextChangedListener(rightWatcher);
                 right.get(i).setText("");
+                right.get(i).addTextChangedListener(rightWatcher);
             }
             p2total.setText("");
         }

@@ -36,11 +36,14 @@ public class EditPlayers extends AppCompatActivity {
     int numPlayers;
     ArrayList<EditText> playerNames;
     ArrayList<String> inputs;
+    ArrayList<String> oldNames;
 
     EditText p1name;
     EditText p2name;
     TextView p1Text;
     Button start;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +55,7 @@ public class EditPlayers extends AppCompatActivity {
         numPlayers = data.getInt("players");
         inputs = new ArrayList<>(numPlayers);
         playerNames = new ArrayList<>(numPlayers);
+        oldNames = data.getStringArrayList("names");
 
         initilizeArray();
 
@@ -83,6 +87,13 @@ public class EditPlayers extends AppCompatActivity {
 
         newMake(numPlayers);
 
+        if(oldNames != null)
+        {
+            for(int i = 0; i < oldNames.size(); ++i)
+            {
+                playerNames.get(i).setText(oldNames.get(i));
+            }
+        }
 
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v)
@@ -103,6 +114,24 @@ public class EditPlayers extends AppCompatActivity {
                 for(int i = 0; i < playerNames.size(); ++i)
                 {
                     inputs.set(i, playerNames.get(i).getText().toString());
+                }
+
+                for(int i = 0; i < inputs.size(); ++i)
+                {
+                    String name = inputs.get(i);
+
+                    for(int j = 0; j < inputs.size(); ++j)
+                    {
+                        if(j != i)
+                        {
+                            if(name.equals(inputs.get(j)))
+                            {
+                                Toast toast = Toast.makeText(getApplicationContext(), "Please use unique names!", Toast.LENGTH_SHORT);
+                                toast.show();
+                                return;
+                            }
+                        }
+                    }
                 }
 
                 Intent test = new Intent (v.getContext(), ScoreCard.class);

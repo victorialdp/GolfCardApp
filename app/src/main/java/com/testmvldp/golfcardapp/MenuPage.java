@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MenuPage extends AppCompatActivity {
 
     @Override
@@ -18,6 +20,7 @@ public class MenuPage extends AppCompatActivity {
         Bundle results = this.getIntent().getExtras();
         int numHoles = results.getInt("holes");
         int numPlayers = results.getInt("players");
+        ArrayList<String> names = results.getStringArrayList("names");
         Button editPlayers = (Button) findViewById(R.id.button2);
         editPlayers.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +29,7 @@ public class MenuPage extends AppCompatActivity {
                 Bundle data = new Bundle();
                 data.putInt("holes", numHoles);
                 data.putInt("players", numPlayers);
+                data.putStringArrayList("names", names);
                 values.putExtras(data);
                 startActivity(values);
             }

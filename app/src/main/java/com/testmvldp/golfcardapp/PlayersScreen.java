@@ -30,6 +30,9 @@ public class PlayersScreen extends AppCompatActivity {
         Button start = (Button) findViewById(R.id.editPlayers);
         EditText numHoles = (EditText) findViewById(R.id.holeNumber);
         EditText numPlayers = (EditText) findViewById(R.id.playerNumbers);
+
+        numHoles.setSelectAllOnFocus(true);
+        numPlayers.setSelectAllOnFocus(true);
         start.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String stringHoles = numHoles.getText().toString();
