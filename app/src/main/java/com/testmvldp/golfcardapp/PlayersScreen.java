@@ -51,7 +51,7 @@ public class PlayersScreen extends AppCompatActivity {
                     players = 0;
                     holes = 0;
                 } else if (players < 2 | players > 8) {
-                    Toast toast = Toast.makeText(getApplicationContext(), "Players mus be between 2 and 8!", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(), "Players must be between 2 and 8!", Toast.LENGTH_SHORT);
                     toast.show();
                     players = 0;
                     holes = 0;

@@ -12,7 +12,7 @@
         android:id="@+id/endGameButton"
         android:layout_width="167dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/roundedbutton"
         android:fontFamily="@font/comfortaa"
         android:text="end game"
@@ -454,7 +454,7 @@
         android:layout_marginTop="28dp"
 
         android:layout_marginBottom="7dp"
-        android:background="@drawable/roundedbutton"
+        android:background="@drawable/button_border"
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
         app:layout_constraintEnd_toStartOf="@+id/right_players_scroll"

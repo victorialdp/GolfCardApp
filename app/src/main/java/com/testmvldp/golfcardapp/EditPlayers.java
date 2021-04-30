@@ -141,7 +141,7 @@ public class EditPlayers extends AppCompatActivity {
         for(int i = 3; i <= numPlayers; ++i)
         {
             TextView label = new TextView(getApplicationContext());
-            label.setText("Player " + i + ":");
+            label.setText("player " + i + ":");
             label.setGravity(Gravity.CENTER);
             label.setBackgroundColor(Color.WHITE);
             label.setBackgroundResource(R.drawable.roundedbutton);
