@@ -209,7 +209,8 @@
         app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/topRow"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:scrollbarFadeDuration="0">
 
         <LinearLayout
             android:id="@+id/rowContainer"
@@ -249,7 +250,7 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    />
+                    android:selectAllOnFocus="true"/>
 
                 <EditText
                     android:id="@+id/Player2Hole1_EditText"
@@ -261,7 +262,7 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    />
+                    android:selectAllOnFocus="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -293,7 +294,8 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:selectAllOnFocus="true"/>
 
                 <EditText
                     android:id="@+id/Player2Hole2_EditText"
@@ -305,7 +307,8 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:selectAllOnFocus="true"/>
             </LinearLayout>
 
             <LinearLayout
@@ -338,7 +341,8 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:selectAllOnFocus="true"/>
 
                 <EditText
                     android:id="@+id/Player2Hole3_EditText"
@@ -350,7 +354,8 @@
                     android:background="@color/white"
                     android:gravity="center"
                     android:layout_marginLeft="4dp"
-                    android:layout_marginBottom="4dp"/>
+                    android:layout_marginBottom="4dp"
+                    android:selectAllOnFocus="true"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

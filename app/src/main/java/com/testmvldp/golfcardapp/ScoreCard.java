@@ -133,10 +133,12 @@ public class ScoreCard extends AppCompatActivity {
 
         makePlayersArray(numPlayers);
 
-//        for(int i = 0; i < 18; ++i)
-//        {
-//            intResults.add(100000);
-//        }
+        for(int i = 0; i < 3; ++i)
+        {
+           left.get(i).setFilters(new InputFilter[] {new InputFilter.LengthFilter(2) });
+           right.get(i).setFilters(new InputFilter[] {new InputFilter.LengthFilter(2) });
+
+        }
 
 
         Button endGame = (Button) findViewById(R.id.endGameButton);

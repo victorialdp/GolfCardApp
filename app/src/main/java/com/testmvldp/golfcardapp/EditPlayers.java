@@ -135,7 +135,18 @@ public class EditPlayers extends AppCompatActivity {
     {
         if(numPlayers == 2)
         {
-            return;
+            p2name.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View view, int j, KeyEvent keyEvent) {
+                    if (j == KeyEvent.KEYCODE_ENTER && keyEvent.getAction() == KeyEvent.ACTION_DOWN) {
+
+                        start.callOnClick();
+
+                        return true;
+                    }
+                    return false;
+                }
+            });
         }
 
         for(int i = 3; i <= numPlayers; ++i)
