@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -52,9 +53,6 @@ public class ScoreCard extends AppCompatActivity {
     private TextView p2total;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -66,15 +64,15 @@ public class ScoreCard extends AppCompatActivity {
         numHoles = results.getInt("holes");
         numPlayers = results.getInt("players");
         intResults = new ArrayList<>(numPlayers);//4 players times 4 holes
-        //rowContainer = findViewById(R.id.holes);
-        //firstRow = findViewById(R.id.firstHole);
+        rowContainer = findViewById(R.id.rowContainer);
+        firstRow = findViewById(R.id.firstHole);
         //scroll = findViewById(R.id.middleRow);
 
         playerScores = new ArrayList<>(numPlayers);
 
-        //hole1 = findViewById(R.id.hole1_textView);
-        //leftSide = findViewById(R.id.player1Hole1_EditText);
-        //rightSide = findViewById(R.id.player2Hole1_EditText);
+        hole1 = findViewById(R.id.Hole1_textView);
+        leftSide = findViewById(R.id.Player1Hole1_EditText);
+        rightSide = findViewById(R.id.Player2Hole1_EditText);
         p1total = findViewById(R.id.Player1RT_TextView);
         p2total = findViewById(R.id.Player2RT_TextView);
 
@@ -86,28 +84,25 @@ public class ScoreCard extends AppCompatActivity {
 
         names = tempArray;
 
-        left = new ArrayList<>(4);
-        right = new ArrayList<>(4);
+        left = new ArrayList<>(numHoles);
+        right = new ArrayList<>(numHoles);
 
         EditText l1 = (EditText) findViewById(R.id.Player1Hole1_EditText);
         EditText l2 = (EditText) findViewById(R.id.Player1Hole2_EditText);
         EditText l3 = (EditText) findViewById(R.id.Player1Hole3_EditText);
-        EditText l4 = (EditText) findViewById(R.id.Player1Hole4_EditText);
 
         EditText r1 = (EditText) findViewById(R.id.Player2Hole1_EditText);
         EditText r2 = (EditText) findViewById(R.id.Player2Hole2_EditText);
         EditText r3 = (EditText) findViewById(R.id.Player2Hole3_EditText);
-        EditText r4 = (EditText) findViewById(R.id.Player2Hole4_EditText);
 
         left.add(l1);
         left.add(l2);
         left.add(l3);
-        left.add(l4);
 
         right.add(r1);
         right.add(r2);
         right.add(r3);
-        right.add(r4);
+
 
         goRight = (ImageButton) findViewById(R.id.right_players_scroll);
         goLeft = (ImageButton) findViewById(R.id.left_players_scroll);
@@ -226,46 +221,55 @@ public class ScoreCard extends AppCompatActivity {
 
     public void initialize()
     {
-//        for(int i = 4; i < numHoles; ++i)
-//        {
-//            LinearLayout layout = new LinearLayout(getApplicationContext());
-//            layout.setOrientation(firstRow.getOrientation());
-//            layout.setLayoutParams(firstRow.getLayoutParams());
-//
-//            TextView label = new TextView(getApplicationContext());
-//            label.setGravity(Gravity.CENTER);
-//            label.setBackgroundColor(Color.WHITE);
-//            label.setTypeface(Typeface.DEFAULT_BOLD);
-//            label.setText("hole " + (i+1));
-//
-//            EditText newLeft = new EditText(getApplicationContext());
-//            newLeft.setGravity(Gravity.CENTER);
-//            newLeft.setBackgroundColor(Color.WHITE);
-//            newLeft.setTypeface(Typeface.DEFAULT_BOLD);
-//            newLeft.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-//            left.add(newLeft);
-//
-//            EditText newRight = new EditText(getApplicationContext());
-//            newRight.setGravity(Gravity.CENTER);
-//            newRight.setBackgroundColor(Color.WHITE);
-//            newRight.setTypeface(Typeface.DEFAULT_BOLD);
-//            newRight.setRawInputType(InputType.TYPE_CLASS_NUMBER);
-//            right.add(newRight);
-//
-//            rowContainer.addView(layout);
-//
-//            layout.addView(label, hole1.getLayoutParams());
-//            layout.addView(newLeft, leftSide.getLayoutParams());
-//            layout.addView(newRight, rightSide.getLayoutParams());
-//        }
+        for(int i = 3; i < numHoles; ++i)
+        {
+            LinearLayout layout = new LinearLayout(getApplicationContext());
+            layout.setOrientation(firstRow.getOrientation());
+            layout.setLayoutParams(firstRow.getLayoutParams());
 
-        for(int i = 0; i < 4; ++i)
+            TextView label = new TextView(getApplicationContext());
+            label.setGravity(Gravity.CENTER);
+            label.setBackgroundColor(Color.WHITE);
+            label.setTypeface(Typeface.createFromAsset(getAssets(), "Comfortaa-VariableFont_wght.ttf"), Typeface.BOLD);
+            label.setText("hole " + (i+1));
+            label.setTextSize(19);
+            label.setTextColor(Color.BLACK);
+
+
+            EditText newLeft = new EditText(getApplicationContext());
+            newLeft.setGravity(Gravity.CENTER);
+            newLeft.setBackgroundColor(Color.WHITE);
+            //newLeft.setTypeface(Typeface.DEFAULT_BOLD);
+            newLeft.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+            newLeft.setFilters(new InputFilter[] {new InputFilter.LengthFilter(2) });
+            newLeft.setSelectAllOnFocus(true);
+            left.add(newLeft);
+
+            EditText newRight = new EditText(getApplicationContext());
+            newRight.setGravity(Gravity.CENTER);
+            newRight.setBackgroundColor(Color.WHITE);
+            //newRight.setTypeface(Typeface.DEFAULT_BOLD);
+            newRight.setRawInputType(InputType.TYPE_CLASS_NUMBER);
+            newRight.setFilters(new InputFilter[] {new InputFilter.LengthFilter(2) });
+            newRight.setSelectAllOnFocus(true);
+            right.add(newRight);
+
+            rowContainer.addView(layout);
+
+            layout.addView(label, hole1.getLayoutParams());
+            layout.addView(newLeft, leftSide.getLayoutParams());
+            layout.addView(newRight, rightSide.getLayoutParams());
+        }
+
+        for(int i = 0; i < numHoles; ++i)
         {
             left.get(i).setText("0");
             left.get(i).addTextChangedListener(leftWatcher);
+
             right.get(i).setText("0");
             right.get(i).addTextChangedListener(rightWatcher);
         }
+
 
 
     }
@@ -275,8 +279,8 @@ public class ScoreCard extends AppCompatActivity {
         for(int i = 0; i < numPlayers; ++i)
         {
 
-            ArrayList<Integer> temp = new ArrayList<>(5);
-            for(int j = 0; j < 5; ++j)
+            ArrayList<Integer> temp = new ArrayList<>(numHoles);
+            for(int j = 0; j < numHoles+1; ++j)
             {
                 temp.add(0);
             }

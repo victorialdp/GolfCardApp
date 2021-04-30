@@ -2,8 +2,12 @@ package com.testmvldp.golfcardapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -56,6 +60,15 @@ public class FinalScore extends AppCompatActivity {
         String winscore = " " + scores.get(playerOrder[0]-1) + " ";
         winnerScore.setText(winscore);
 
+        Button again = (Button) findViewById(R.id.homeFromRules);
 
+        again.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v)
+            {
+                Intent beggining = new Intent(v.getContext(), PlayersScreen.class);
+                startActivity(beggining);
+            }
+
+        });
     }
 }
