@@ -48,6 +48,7 @@
         android:layout_width="230dp"
         android:layout_height="20dp"
         android:layout_marginTop="4dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.861"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,16 +59,16 @@
         android:layout_width="89dp"
         android:layout_height="78dp"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="37dp"
         android:layout_marginEnd="13dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="63dp"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout3"
         app:layout_constraintEnd_toStartOf="@+id/scorecardTitle"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/logo" />
 
     <ImageButton
@@ -81,29 +82,11 @@
         android:background="#00FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.318"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.28"
-        app:srcCompat="@drawable/hamburgerbutton" />
-
-    <TextView
-        android:id="@+id/progress_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="29dp"
-        android:layout_marginBottom="16dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="@string/progress_textView"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/progressBar"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/hamburgerbutton" />
 
 
     <GridLayout
@@ -125,9 +108,9 @@
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_marginRight="1sp"
-            android:layout_marginTop="2sp"
             android:layout_marginLeft="0sp"
+            android:layout_marginTop="2sp"
+            android:layout_marginRight="1sp"
             android:background="@drawable/grid_upperleftrounded"
             android:backgroundTint="#FFFFFF"
             android:fontFamily="@font/comfortaa"
@@ -144,8 +127,8 @@
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_marginTop="2sp"
             android:layout_marginLeft="2sp"
+            android:layout_marginTop="2sp"
             android:layout_marginRight="2sp"
             android:layout_marginBottom="3sp"
             android:background="@color/white"
@@ -153,16 +136,16 @@
             android:gravity="center"
             android:text="player 3"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/Player2_textView"
             android:layout_width="0dp"
             android:layout_height="75sp"
             android:layout_columnWeight="1"
-            android:layout_marginTop="2sp"
             android:layout_marginLeft="1sp"
+            android:layout_marginTop="2sp"
             android:layout_marginRight="2sp"
             android:layout_marginBottom="3sp"
             android:background="@drawable/grid_upperrightrounded"
@@ -171,8 +154,8 @@
             android:gravity="center"
             android:text="player 4"
             android:textColor="@color/black"
-            android:textStyle="bold"
             android:textSize="18sp"
+            android:textStyle="bold"
 
             />
 
@@ -185,8 +168,7 @@
         app:layout_constraintBottom_toTopOf="@+id/gridLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gridLayout3"
-        android:scrollbarFadeDuration="0">
+        app:layout_constraintTop_toBottomOf="@+id/gridLayout3">
 
         <GridLayout
             android:id="@+id/gridLayout2"
